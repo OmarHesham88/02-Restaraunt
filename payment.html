@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Ø§Ù„Ø¯ÙØ¹ - Crispy Kitchen</title>
+    <title>متابعة الدفع - Crispy Kitchen</title>
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -73,31 +73,41 @@
         </button>
 
         <a class="navbar-brand" href="index.html">
-          <img src="images/logo.png" alt="Crispy Kitchen" height="40" />
+          <img src="images/header-logo.png" alt="Crispy Kitchen" height="40" />
         </a>
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Ø§Ù„Ù…Ù†ÙŠÙˆ</a>
+              <a class="nav-link" href="menu.html">المنيو</a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="breakfast.html">Ø§Ù„ÙØ·ÙˆØ± Ø§Ù„ØµØ¨Ø§Ø­Ù‰</a>
+              <a class="nav-link" href="breakfast.html">الفطور الصباحى</a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="menu.html">Ø§Ù„ÙˆØ±Ø¯</a>
+              <a class="nav-link" href="flowers.html">الورد</a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="news.html">Ù…Ù†ØªØ¬Ø§Øª Ø§Ù„ÙˆØ±Ø¯</a>
+              <a class="nav-link" href="flowers-products.html">منتجات الورد</a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">ØªÙˆØ§ØµÙ„ Ù…Ø¹Ù†Ø§</a>
+              <a class="nav-link" href="contact.html">تواصل معنا</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">من نحن</a>
             </li>
           </ul>
         </div>
+
         <div class="cart-wrapper position-relative me-3">
           <a href="cart.html" class="cart-btn">
             <i class="bi-cart3"></i>
+
             <span id="cart-count">0</span>
           </a>
         </div>
@@ -109,20 +119,20 @@
         <div class="row g-4">
           <div class="col-lg-7 col-12">
             <div class="payment-card">
-              <h2 class="mb-4">Ø¥ØªÙ…Ø§Ù… Ø§Ù„Ø·Ù„Ø¨</h2>
+              <h2 class="mb-4">متابعة الدفع</h2>
 
               <div class="row g-3">
                 <div class="col-md-6 col-12">
-                  <label class="form-label" for="full-name">Ø§Ù„Ø§Ø³Ù… ÙƒØ§Ù…Ù„</label>
+                  <label class="form-label" for="full-name">الاسم كاملاً</label>
                   <input
                     type="text"
                     class="form-control"
                     id="full-name"
-                    placeholder="Ø§ÙƒØªØ¨ Ø§Ù„Ø§Ø³Ù… Ù‡Ù†Ø§"
+                    placeholder="ادخل اسمك الكامل"
                   />
                 </div>
                 <div class="col-md-6 col-12">
-                  <label class="form-label" for="phone">Ø§Ù„Ø¬ÙˆØ§Ù„</label>
+                  <label class="form-label" for="phone">الجوال</label>
                   <input
                     type="tel"
                     class="form-control"
@@ -131,7 +141,9 @@
                   />
                 </div>
                 <div class="col-md-6 col-12">
-                  <label class="form-label" for="email">Ø§Ù„Ø¥ÙŠÙ…ÙŠÙ„</label>
+                  <label class="form-label" for="email"
+                    >البريد الإلكتروني</label
+                  >
                   <input
                     type="email"
                     class="form-control"
@@ -140,18 +152,18 @@
                   />
                 </div>
                 <div class="col-md-6 col-12">
-                  <label class="form-label" for="area">Ù…Ù†Ø·Ù‚Ø© Ø§Ù„ØªÙˆØµÙŠÙ„</label>
+                  <label class="form-label" for="area">منطقة التوصيل</label>
                   <select class="form-select" id="area">
-                    <option selected>Ø§Ø®ØªØ± Ø§Ù„Ù…Ù†Ø·Ù‚Ø©</option>
-                    <option>Ø´Ù…Ø§Ù„ Ø§Ù„Ø±ÙŠØ§Ø¶</option>
-                    <option>Ø´Ø±Ù‚ Ø§Ù„Ø±ÙŠØ§Ø¶</option>
-                    <option>Ø¬Ù†ÙˆØ¨ Ø§Ù„Ø±ÙŠØ§Ø¶</option>
-                    <option>ØºØ±Ø¨ Ø§Ù„Ø±ÙŠØ§Ø¶</option>
+                    <option selected>اختر المنطقة</option>
+                    <option>شمال الرياض</option>
+                    <option>شرق الرياض</option>
+                    <option>جنوب الرياض</option>
+                    <option>غربي الرياض</option>
                   </select>
                 </div>
                 <div class="col-12">
                   <label class="form-label" for="address"
-                    >Ø¹Ù†ÙˆØ§Ù† Ø§Ù„ØªÙˆØµÙŠÙ„ ÙƒØªØ§Ø¨Ø© Ù†Øµ</label
+                    >عنوان التوصيل كتلة نصية</label
                   >
                   <textarea
                     class="form-control"
@@ -161,16 +173,16 @@
                   ></textarea>
                 </div>
                 <div class="col-12">
-                  <label class="form-label">ØªØ­Ø¯ÙŠØ¯ Ø§Ù„Ù…ÙˆÙ‚Ø¹ Ø¹Ù„Ù‰ Ø§Ù„Ø®Ø±ÙŠØ·Ø©</label>
-                  <div class="map-placeholder">
-                    Ø³ÙŠØªÙ… ÙˆØ¶Ø¹ Ø§Ù„Ø®Ø±ÙŠØ·Ø© Ù‡Ù†Ø§
-                  </div>
+                  <label class="form-label"
+                    >تحديد موقع التوصيل على الخريطة</label
+                  >
+                  <div class="map-placeholder">سيتم وضع خريطة التوصيل هنا</div>
                 </div>
               </div>
 
               <hr class="my-4" />
 
-              <h5 class="mb-3">Ø·Ø±ÙŠÙ‚Ø© Ø§Ù„Ø¯ÙØ¹</h5>
+              <h5 class="mb-3">طريقة الدفع</h5>
               <div class="form-check mb-2">
                 <input
                   class="form-check-input"
@@ -179,7 +191,7 @@
                   id="pay-visa"
                   checked
                 />
-                <label class="form-check-label" for="pay-visa">ÙÙŠØ²Ø§</label>
+                <label class="form-check-label" for="pay-visa">فيزا</label>
               </div>
               <div class="form-check mb-3">
                 <input
@@ -189,28 +201,28 @@
                   id="pay-cod"
                 />
                 <label class="form-check-label" for="pay-cod"
-                  >Ø§Ù„Ø¯ÙØ¹ Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø³ØªÙ„Ø§Ù…</label
+                  >الدفع عند الاستلام</label
                 >
               </div>
 
-              <button class="btn btn-danger w-100">Ø¥ØªÙ…Ø§Ù… Ø§Ù„Ø¯ÙØ¹</button>
+              <button class="btn btn-danger w-100">إتمام الدفع</button>
             </div>
           </div>
 
           <div class="col-lg-5 col-12">
             <div class="payment-summary">
-              <h5 class="mb-3">Ù…Ù„Ø®Øµ Ø§Ù„Ø·Ù„Ø¨</h5>
+              <h5 class="mb-3">ملخص الطلب</h5>
               <div class="d-flex justify-content-between mb-2">
-                <span>Ø§Ø¬Ù…Ø§Ù„ÙŠ Ø§Ù„Ø·Ù„Ø¨</span>
+                <span>إجمالي الطلب</span>
                 <span id="subtotal">0</span>
               </div>
               <div class="d-flex justify-content-between mb-2">
-                <span>ØªÙƒØ§Ù„ÙŠÙ Ø§Ù„Ø´Ø­Ù†</span>
+                <span>تكاليف الشحن</span>
                 <span id="shipping">20</span>
               </div>
               <hr />
               <div class="d-flex justify-content-between fw-bold">
-                <span>Ø§Ø¬Ù…Ø§Ù„ÙŠ</span>
+                <span>إجمالي الطلب</span>
                 <span id="grand-total">0</span>
               </div>
             </div>
