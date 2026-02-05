@@ -1,0 +1,267 @@
+﻿<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Ø§Ù„Ø¯ÙØ¹ - Crispy Kitchen</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+
+    <link href="css/tooplate-crispy-kitchen.css" rel="stylesheet" />
+
+    <style>
+      .payment-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+        padding: 28px;
+      }
+
+      .payment-summary {
+        background: #fff7f7;
+        border-radius: 14px;
+        padding: 20px;
+        border: 1px solid #f1dcdc;
+      }
+
+      .map-placeholder {
+        background: #f5f5f5;
+        border-radius: 12px;
+        height: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #777;
+        border: 1px dashed #d9d9d9;
+      }
+    </style>
+  </head>
+
+  <body class="has-fixed-navbar">
+    <nav class="navbar navbar-expand-lg bg-white shadow-lg fixed-top">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" alt="Crispy Kitchen" height="40" />
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Ø§Ù„Ù…Ù†ÙŠÙˆ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="breakfast.html">Ø§Ù„ÙØ·ÙˆØ± Ø§Ù„ØµØ¨Ø§Ø­Ù‰</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Ø§Ù„ÙˆØ±Ø¯</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news.html">Ù…Ù†ØªØ¬Ø§Øª Ø§Ù„ÙˆØ±Ø¯</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">ØªÙˆØ§ØµÙ„ Ù…Ø¹Ù†Ø§</a>
+            </li>
+          </ul>
+        </div>
+        <div class="cart-wrapper position-relative me-3">
+          <a href="cart.html" class="cart-btn">
+            <i class="bi-cart3"></i>
+            <span id="cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="section-padding">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-7 col-12">
+            <div class="payment-card">
+              <h2 class="mb-4">Ø¥ØªÙ…Ø§Ù… Ø§Ù„Ø·Ù„Ø¨</h2>
+
+              <div class="row g-3">
+                <div class="col-md-6 col-12">
+                  <label class="form-label" for="full-name">Ø§Ù„Ø§Ø³Ù… ÙƒØ§Ù…Ù„</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="full-name"
+                    placeholder="Ø§ÙƒØªØ¨ Ø§Ù„Ø§Ø³Ù… Ù‡Ù†Ø§"
+                  />
+                </div>
+                <div class="col-md-6 col-12">
+                  <label class="form-label" for="phone">Ø§Ù„Ø¬ÙˆØ§Ù„</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    placeholder="05xxxxxxxx"
+                  />
+                </div>
+                <div class="col-md-6 col-12">
+                  <label class="form-label" for="email">Ø§Ù„Ø¥ÙŠÙ…ÙŠÙ„</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="example@email.com"
+                  />
+                </div>
+                <div class="col-md-6 col-12">
+                  <label class="form-label" for="area">Ù…Ù†Ø·Ù‚Ø© Ø§Ù„ØªÙˆØµÙŠÙ„</label>
+                  <select class="form-select" id="area">
+                    <option selected>Ø§Ø®ØªØ± Ø§Ù„Ù…Ù†Ø·Ù‚Ø©</option>
+                    <option>Ø´Ù…Ø§Ù„ Ø§Ù„Ø±ÙŠØ§Ø¶</option>
+                    <option>Ø´Ø±Ù‚ Ø§Ù„Ø±ÙŠØ§Ø¶</option>
+                    <option>Ø¬Ù†ÙˆØ¨ Ø§Ù„Ø±ÙŠØ§Ø¶</option>
+                    <option>ØºØ±Ø¨ Ø§Ù„Ø±ÙŠØ§Ø¶</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="address"
+                    >Ø¹Ù†ÙˆØ§Ù† Ø§Ù„ØªÙˆØµÙŠÙ„ ÙƒØªØ§Ø¨Ø© Ù†Øµ</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="address"
+                    rows="3"
+                    placeholder="Ø§ÙƒØªØ¨ Ø¹Ù†ÙˆØ§Ù†Ùƒ Ø¨Ø§Ù„ØªÙØµÙŠÙ„"
+                  ></textarea>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">ØªØ­Ø¯ÙŠØ¯ Ø§Ù„Ù…ÙˆÙ‚Ø¹ Ø¹Ù„Ù‰ Ø§Ù„Ø®Ø±ÙŠØ·Ø©</label>
+                  <div class="map-placeholder">
+                    Ø³ÙŠØªÙ… ÙˆØ¶Ø¹ Ø§Ù„Ø®Ø±ÙŠØ·Ø© Ù‡Ù†Ø§
+                  </div>
+                </div>
+              </div>
+
+              <hr class="my-4" />
+
+              <h5 class="mb-3">Ø·Ø±ÙŠÙ‚Ø© Ø§Ù„Ø¯ÙØ¹</h5>
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="payment"
+                  id="pay-visa"
+                  checked
+                />
+                <label class="form-check-label" for="pay-visa">ÙÙŠØ²Ø§</label>
+              </div>
+              <div class="form-check mb-3">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="payment"
+                  id="pay-cod"
+                />
+                <label class="form-check-label" for="pay-cod"
+                  >Ø§Ù„Ø¯ÙØ¹ Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø³ØªÙ„Ø§Ù…</label
+                >
+              </div>
+
+              <button class="btn btn-danger w-100">Ø¥ØªÙ…Ø§Ù… Ø§Ù„Ø¯ÙØ¹</button>
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-12">
+            <div class="payment-summary">
+              <h5 class="mb-3">Ù…Ù„Ø®Øµ Ø§Ù„Ø·Ù„Ø¨</h5>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Ø§Ø¬Ù…Ø§Ù„ÙŠ Ø§Ù„Ø·Ù„Ø¨</span>
+                <span id="subtotal">0</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>ØªÙƒØ§Ù„ÙŠÙ Ø§Ù„Ø´Ø­Ù†</span>
+                <span id="shipping">20</span>
+              </div>
+              <hr />
+              <div class="d-flex justify-content-between fw-bold">
+                <span>Ø§Ø¬Ù…Ø§Ù„ÙŠ</span>
+                <span id="grand-total">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+      function getCart() {
+        return JSON.parse(localStorage.getItem("cart")) || [];
+      }
+
+      function updateCartCount() {
+        let cart = getCart();
+        let totalQty = cart.reduce((sum, item) => {
+          return sum + (item.quantity || 1);
+        }, 0);
+
+        let countEl = document.getElementById("cart-count");
+        if (countEl) {
+          if (totalQty > 0) {
+            countEl.innerText = totalQty;
+            countEl.style.display = "inline-block";
+          } else {
+            countEl.style.display = "none";
+          }
+        }
+      }
+
+      function updateTotals() {
+        let cart = getCart();
+        let subtotal = cart.reduce((sum, item) => {
+          return sum + (item.price || 0) * (item.quantity || 1);
+        }, 0);
+        let shipping = 20;
+        let grand = subtotal + shipping;
+
+        document.getElementById("subtotal").textContent = subtotal.toFixed(2);
+        document.getElementById("shipping").textContent = shipping.toFixed(2);
+        document.getElementById("grand-total").textContent = grand.toFixed(2);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        updateCartCount();
+        updateTotals();
+      });
+    </script>
+  </body>
+</html>
