@@ -723,7 +723,7 @@ strong {
 }
 
 .BgImage {
-  background-image: url("../images/landing.PNG");
+  background-image: url("../images/landing.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -734,7 +734,7 @@ strong {
   FOOTER              
 -----------------------------------------*/
 .site-footer {
-  background-image: url("../images/footer.png");
+  background-image: url("../images/footer.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -932,7 +932,7 @@ body {
 }
 
 .cart-btn:hover {
-  color: #dc3545;
+  color: var(--secondary-color);
 }
 .add-to-cart-btn {
   width: 100%;
@@ -948,7 +948,7 @@ body {
   position: absolute;
   top: -6px;
   right: -10px;
-  background: #dc3545;
+  background: var(--secondary-color);
   color: #fff;
   font-size: 10px;
   padding: 6px 6px;
@@ -1026,7 +1026,7 @@ body {
   gap: 8px;
   padding: 10px 16px;
   border-radius: 10px;
-  background: #0aa9a1;
+  background: black;
   color: var(--white-color);
   font-size: 16px;
   text-decoration: none;
@@ -1035,11 +1035,11 @@ body {
 
 .menu-tab:hover {
   color: var(--white-color);
-  background: #0c8f88;
+  background: var(--secondary-color);
 }
 
 .menu-tab.active {
-  background: var(--primary-color);
+  background: var(--secondary-color);
 }
 
 .menu-list .section-title {
@@ -1055,7 +1055,9 @@ body {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   margin-bottom: 24px;
-  transition: transform 260ms ease, box-shadow 260ms ease;
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease;
 }
 
 .menu-card-image img {
@@ -1183,7 +1185,10 @@ body {
   border: 1px solid #ececec;
   color: #222;
   background: #fff;
-  transition: transform 200ms ease, color 200ms ease, border-color 200ms ease;
+  transition:
+    transform 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
 }
 
 .contact-panel-icons a:hover {
