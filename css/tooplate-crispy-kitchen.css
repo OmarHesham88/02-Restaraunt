@@ -383,7 +383,7 @@ strong {
 }
 @media screen and (max-width: 400px) {
   .carousel-image {
-    height: 150px;
+    height: 320px;
   }
 }
 .hero-carousel,
@@ -411,6 +411,9 @@ strong {
 .hero-carousel .reviews-text,
 .hero-text {
   color: var(--white-color);
+}
+.heroText h1 {
+  text-align: center;
 }
 
 .price-tag {
@@ -902,8 +905,8 @@ strong {
 
   .hero-carousel .carousel-control-prev,
   .hero-carousel .carousel-control-next {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -1133,17 +1136,17 @@ body {
   border-radius: 18px;
   padding: 48px 32px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .contact-panel-title {
-  color: var(--primary-color);
+  color: var(--dark-color);
   font-size: 26px;
   margin-bottom: 26px;
 }
 
 .contact-panel-subtitle {
-  color: var(--primary-color);
+  color: var(--secondary-color);
   font-size: 24px;
   margin: 24px 0 18px;
 }
@@ -1154,17 +1157,17 @@ body {
   gap: 12px;
   font-size: 30px;
   font-weight: var(--font-weight-semibold);
-  color: #0aa9a1;
+  color: var(--secondary-color);
   text-decoration: none;
 }
 
 .contact-panel-link i {
   font-size: 30px;
-  color: var(--primary-color);
+  color: var(--dark-color);
 }
 
 .contact-panel-link:hover {
-  color: #0c8f88;
+  color: var(--dark-color);
 }
 
 .contact-panel-icons {
@@ -1182,9 +1185,9 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 14px;
-  border: 1px solid #ececec;
-  color: #222;
-  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: var(--dark-color);
+  background: #f9f9f9;
   transition:
     transform 200ms ease,
     color 200ms ease,
@@ -1192,8 +1195,8 @@ body {
 }
 
 .contact-panel-icons a:hover {
-  color: var(--primary-color);
-  border-color: #f1dcdc;
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
   transform: translateY(-2px);
 }
 
