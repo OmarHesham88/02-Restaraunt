@@ -222,9 +222,15 @@ strong {
   background: transparent;
 }
 
-.navbar-toggler[aria-expanded="true"] ~ .navbar-brand {
-  /* display: none; */
+/* .cart-res {
+  display: none !important;
 }
+.navbar-toggler[aria-expanded="true"] ~ .logo-img {
+  display: none;
+}
+.navbar-toggler[aria-expanded="true"] ~ .cart-res {
+  display: block;
+} */
 
 /* Move cart into logo spot when menu is open */
 .navbar {
