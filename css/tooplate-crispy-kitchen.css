@@ -222,6 +222,23 @@ strong {
   background: transparent;
 }
 
+.navbar-toggler[aria-expanded="true"] ~ .navbar-brand {
+  /* display: none; */
+}
+
+/* Move cart into logo spot when menu is open */
+.navbar {
+  position: relative;
+}
+
+.navbar-toggler[aria-expanded="true"] ~ .cart-wrapper {
+  position: absolute;
+  inset-inline-start: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+}
+
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before,
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
   transition:
