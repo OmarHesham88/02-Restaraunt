@@ -222,6 +222,18 @@ strong {
   background: transparent;
 }
 
+.nav-opening .navbar-toggler ~ .navbar-brand {
+  display: none;
+}
+
+.nav-opening .navbar-toggler ~ .cart-wrapper {
+  order: 2;
+}
+
+.nav-opening .navbar-toggler ~ .collapse {
+  order: 3;
+}
+
 /* .cart-res {
   display: none !important;
 }
@@ -237,12 +249,36 @@ strong {
   position: relative;
 }
 
-.navbar-toggler[aria-expanded="true"] ~ .cart-wrapper {
+.nav-opening .navbar-toggler ~ .cart-wrapper {
   position: absolute;
-  inset-inline-start: 15px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 14px;
+  left: 15px;
+  right: auto;
+  transform: none;
   margin: 0;
+  z-index: 1001;
+}
+
+/* Floating cart chip when menu is open */
+.nav-opening .navbar-toggler ~ .cart-wrapper .cart-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 14px;
+  padding: 6px 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.nav-opening .navbar-toggler ~ .cart-wrapper #cart-count {
+  position: static;
+  background: var(--secondary-color);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 1;
 }
 
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before,
