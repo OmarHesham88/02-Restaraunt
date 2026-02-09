@@ -16,6 +16,8 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/tooplate-crispy-kitchen.css" rel="stylesheet" />
 
     <!-- Font -->
     <link
@@ -32,27 +34,86 @@
       .cart-card {
         background: #fff;
         border-radius: 10px;
-        padding: 20px;
+        padding: 24px;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
       }
 
       .cart-item {
         border-bottom: 1px solid #eee;
-        padding: 15px 0;
+        padding: 18px 0;
       }
 
       .cart-item:last-child {
         border-bottom: none;
       }
 
+      .item-meta {
+        color: #6c757d;
+        font-size: 1.05rem;
+      }
+
+      .item-line-total {
+        font-weight: 700;
+        color: #212529;
+        font-size: 1.1rem;
+      }
+
       .remove-btn {
         color: #dc3545;
         cursor: pointer;
+        font-size: 1.05rem;
       }
 
       .total-box {
-        font-size: 20px;
+        font-size: 2rem;
         font-weight: 700;
+      }
+
+      .cart-page-title {
+        font-size: 3.15rem;
+        font-weight: 700;
+      }
+
+      #cart-items strong {
+        font-size: 1.85rem;
+        line-height: 1.2;
+      }
+
+      .cart-item .btn {
+        font-size: 1.1rem;
+        padding: 0.35rem 0.8rem;
+      }
+
+      .cart-item .fw-semibold {
+        font-size: 1.35rem;
+      }
+
+      .cart-checkout-btn {
+        font-size: 1.35rem;
+        font-weight: 700;
+        padding: 0.55rem 1.1rem;
+      }
+
+      @media (max-width: 767.98px) {
+        .cart-page-title {
+          font-size: 2.3rem;
+        }
+
+        #cart-items strong {
+          font-size: 1.35rem;
+        }
+
+        .total-box {
+          font-size: 1.55rem;
+        }
+
+        .item-meta {
+          font-size: 0.98rem;
+        }
+
+        .cart-checkout-btn {
+          font-size: 1.1rem;
+        }
       }
     </style>
   </head>
@@ -101,6 +162,10 @@
             <li class="nav-item">
               <a class="nav-link" href="about.html">من نحن</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="events-news.html">الفعاليات والأخبار</a>
+            </li>
           </ul>
         </div>
 
@@ -114,7 +179,7 @@
       </div>
     </nav>
     <div class="container py-5">
-      <h2 class="mb-4 text-center">
+      <h2 class="mb-4 text-center cart-page-title">
         <i class="bi-cart3"></i>
         عربة التسوق
       </h2>
@@ -127,7 +192,7 @@
             الإجمالي: <span id="total-price">0</span> $
           </div>
 
-          <a class="btn btn-danger" href="payment.html">إتمام الطلب</a>
+          <a class="btn btn-danger cart-checkout-btn" href="payment.html">إتمام الطلب</a>
         </div>
       </div>
     </div>
@@ -210,7 +275,7 @@
         if (cart.length === 0) {
           cartItemsEl.innerHTML = `
                 <p class="text-center text-muted">
-                    Ø§Ù„Ø¹Ø±Ø¨Ø© ÙØ§Ø±ØºØ© ðŸ›’
+                    العربة فارغة
                 </p>
             `;
           totalEl.innerText = 0;
@@ -218,7 +283,9 @@
         }
 
         cart.forEach((item, index) => {
-          let itemTotal = item.price * item.quantity;
+          const unitPrice = Number(item.price) || 0;
+          const qty = Number(item.quantity) || 0;
+          let itemTotal = unitPrice * qty;
           total += itemTotal;
 
           cartItemsEl.innerHTML += `
@@ -226,14 +293,17 @@
 
                     <div>
                         <strong>${item.name}</strong><br>
-                        <small>${item.price}قطعة $ ${item.quantity}</small>
+                        <small class="item-meta">
+                          ${qty} × $${unitPrice.toFixed(2)} = 
+                          <span class="item-line-total">$${itemTotal.toFixed(2)}</span>
+                        </small>
                     </div>
 
                     <div class="d-flex align-items-center gap-2">
                         <button class="btn btn-sm btn-outline-secondary"
                                 onclick="decreaseQty(${index})">-</button>
 
-                        <span>${item.quantity}</span>
+                        <span class="fw-semibold">${qty}</span>
 
                         <button class="btn btn-sm btn-outline-secondary"
                                 onclick="increaseQty(${index})">+</button>
@@ -285,5 +355,6 @@
 
       renderCart();
     </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -39,7 +39,75 @@
 
     <link href="css/tooplate-crispy-kitchen.css" rel="stylesheet" />
 
-    <style></style>
+    <style>
+      .gallery-preview,
+      .rose-feature-link,
+      .coffee-feature-link {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .gallery-preview img,
+      .rose-feature-link img,
+      .coffee-feature-link img {
+        transition:
+          transform 0.35s ease,
+          filter 0.35s ease;
+      }
+
+      .gallery-preview::after,
+      .rose-feature-link::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.2);
+        transition: background-color 0.25s ease;
+        pointer-events: none;
+      }
+
+      .gallery-preview:hover,
+      .rose-feature-link:hover,
+      .coffee-feature-link:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.2);
+      }
+
+      .gallery-preview:hover::after,
+      .rose-feature-link:hover::after {
+        background: rgba(0, 0, 0, 0.28);
+      }
+
+      .gallery-preview:hover img,
+      .rose-feature-link:hover img,
+      .coffee-feature-link:hover img {
+        transform: scale(1.06);
+        filter: brightness(0.94) saturate(1.06);
+      }
+
+      #galleryImageModal .modal-dialog {
+        max-width: min(95vw, 1200px);
+      }
+
+      #galleryImageModal .modal-content {
+        width: fit-content;
+        margin: 0 auto;
+      }
+
+      #galleryImageModalImg {
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: 95vw;
+        max-height: 85vh;
+        object-fit: contain;
+      }
+    </style>
 
     <!--
 
@@ -134,9 +202,29 @@
           <div class="row">
             <div class="col-lg-5 col-12 m-auto">
               <div class="heroText">
-                <h1 class="text-white mb-lg-5 mb-3">
-                  Novelle <br />
-                  <span style="white-space: nowrap"> Coffee & Farm </span>
+                <h1 class="mb-lg-5 mb-3">
+                  <img
+                    width="300px"
+                    src="images/logo-landing.png"
+                    class="img-fluid"
+                    alt="Novelle Coffee & Farm"
+                    style="
+                      width: min(320px, 80vw);
+                      height: 110px;
+                      object-fit: cover;
+                      object-position: center;
+                    "
+                  />
+                  <p
+                    class="text-white mb-lg-5 mb-3"
+                    style="
+                      white-space: nowrap;
+                      font-size: 3rem;
+                      font-weight: 600;
+                    "
+                  >
+                    Coffee & Farm
+                  </p>
                 </h1>
 
                 <div class="c-reviews my-3 d-flex flex-wrap align-items-center">
@@ -260,34 +348,36 @@
 
       <section class="news section-padding" style="background: #e6e1d6">
         <div class="container">
-          <div
-            class="row g-0 overflow-hidden"
-            style="border-radius: 18px"
-          >
+          <div class="row g-0 overflow-hidden" style="border-radius: 18px">
             <div class="col-lg-6 col-12 p-4 p-lg-5">
               <h2 class="mb-3" style="color: #2d2218">قهوة عضوية من المزرعة</h2>
-              <p class="mb-3" style="color: #4c3b2d">
-                نختار حبوب القهوة بعناية من مزارعنا، ثم نحمصها بدرجات مدروسة
-                لتمنحك نكهة متوازنة ورائحة غنية في كل كوب.
-              </p>
-              <a href="menu.html" class="btn custom-btn">اكتشف قائمة القهوة</a>
+              <a
+                href="menu.html"
+                class="btn custom-btn"
+                style="background: #2d2218; border-color: #2d2218; color: #fff"
+                >اكتشف قائمة القهوة</a
+              >
             </div>
 
             <div class="col-lg-6 col-12 p-4 p-lg-5">
-              <h2 class="mb-3" style="color: #2d2218">نكهة أصيلة وجودة يومية</h2>
-              <p class="mb-3" style="color: #4c3b2d">
-                من الإسبريسو إلى القهوة المقطرة، نقدم خيارات قهوة طازجة تناسب
-                كل الأذواق وتُحضّر لحظيًا بجودة نوفيلا المعتادة.
-              </p>
-              <a href="menu.html" class="btn custom-btn">اطلب من المنيو</a>
+              <div
+                class="h-100 rounded-3 p-4 d-flex flex-column justify-content-center"
+                style="background: #d8ccba; border: 1px solid #c8b79f"
+              >
+                <h5 class="mb-3" style="color: #2d2218">لماذا قهوة نوفيلا؟</h5>
+                <p class="mb-0" style="color: #4c3b2d">
+                  تحميص مدروس، جودة ثابتة، وخيارات متعددة من الإسبريسو إلى
+                  القهوة المقطرة لتناسب كل ذوق.
+                </p>
+              </div>
             </div>
 
             <div class="col-12">
               <div class="row g-0">
                 <div class="col-lg-6 col-12 position-relative">
-                  <a href="menu.html" class="d-block">
+                  <a href="menu.html" class="d-block coffee-feature-link">
                     <img
-                      src="images/news/gilles-lambert-S_LhjpfIdm4-unsplash.jpg"
+                      src="images/coffe/right-image.jpeg"
                       class="img-fluid"
                       alt="حبوب قهوة عضوية"
                       style="height: 300px; width: 100%; object-fit: cover"
@@ -295,15 +385,19 @@
                   </a>
                   <div
                     class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end p-4"
-                    style="background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 30%, rgba(0, 0, 0, 0.55) 100%)"
-                  >
-                    <h3 class="text-white mb-0">قهوة عضوية<br />إنتاج يومي</h3>
-                  </div>
+                    style="
+                      background: linear-gradient(
+                        180deg,
+                        rgba(0, 0, 0, 0.05) 30%,
+                        rgba(0, 0, 0, 0.55) 100%
+                      );
+                    "
+                  ></div>
                 </div>
                 <div class="col-lg-6 col-12">
-                  <a href="menu.html" class="d-block">
+                  <a href="menu.html" class="d-block coffee-feature-link">
                     <img
-                      src="images/news/louis-hansel-GiIiRV0FjwU-unsplash.jpg"
+                      src="images/coffe/left-image.jpeg"
                       class="img-fluid"
                       alt="فنجان قهوة"
                       style="height: 300px; width: 100%; object-fit: cover"
@@ -316,11 +410,48 @@
         </div>
       </section>
 
+      <section class="news section-padding pt-5 pb-0">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 text-center mb-4">
+              <h2 class="mb-3">الورد و منتجات الورد</h2>
+            </div>
+
+            <div class="col-lg-6 col-12 mb-3 mb-lg-0">
+              <a
+                href="flowers.html"
+                class="d-block rose-feature-link rounded-3"
+              >
+                <img
+                  src="images/flower.jpeg"
+                  class="img-fluid rounded-3"
+                  alt="الورد"
+                  style="height: 420px; width: 100%; object-fit: cover"
+                />
+              </a>
+            </div>
+
+            <div class="col-lg-6 col-12">
+              <a
+                href="flowers-products.html"
+                class="d-block rose-feature-link rounded-3"
+              >
+                <img
+                  src="images/flower-products.jpeg"
+                  class="img-fluid rounded-3"
+                  alt="منتجات الورد"
+                  style="height: 420px; width: 100%; object-fit: cover"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="news section-padding">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-12 text-center mb-4">
-              <h2 class="mb-3">معرض الورد ومنتجاته</h2>
+              <h2 class="mb-3">معرض الصور</h2>
               <p class="mb-0">
                 تشكيلة يومية من ورد الطائف الطازج مع منتجات الورد الطبيعية،
                 منسقة بهوية نوفيلا ولمسة أنيقة.
@@ -328,84 +459,180 @@
             </div>
 
             <div class="col-12">
-              <div class="row g-3">
+              <div class="row g-3 flower-gallery">
                 <div class="col-lg-3 col-md-4 col-6">
-                  <a href="flowers-products.html" class="d-block">
+                  <a
+                    href="images/gallery/01.jpeg"
+                    class="d-block gallery-preview"
+                    data-bs-toggle="modal"
+                    data-bs-target="#galleryImageModal"
+                    data-image-src="images/gallery/01.jpeg"
+                    data-image-alt="ورد طائفي"
+                  >
                     <img
-                      src="images/flower.jpg"
+                      src="images/gallery/01.jpeg"
                       class="img-fluid rounded-3"
                       alt="ورد طائفي"
-                      style="height: 180px; width: 100%; object-fit: cover"
+                      style="
+                        height: 180px;
+                        width: 100%;
+                        object-fit: cover;
+                        cursor: zoom-in;
+                      "
                     />
                   </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6">
-                  <a href="flowers-products.html" class="d-block">
+                  <a
+                    href="images/gallery/02.jpeg"
+                    class="d-block gallery-preview"
+                    data-bs-toggle="modal"
+                    data-bs-target="#galleryImageModal"
+                    data-image-src="images/gallery/02.jpeg"
+                    data-image-alt="منتجات الورد"
+                  >
                     <img
-                      src="images/flowers-products.jpg"
+                      src="images/gallery/02.jpeg"
                       class="img-fluid rounded-3"
                       alt="منتجات الورد"
-                      style="height: 180px; width: 100%; object-fit: cover"
+                      style="
+                        height: 180px;
+                        width: 100%;
+                        object-fit: cover;
+                        cursor: zoom-in;
+                      "
                     />
                   </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6">
-                  <a href="flowers-products.html" class="d-block">
+                  <a
+                    href="images/gallery/03.jpeg"
+                    class="d-block gallery-preview"
+                    data-bs-toggle="modal"
+                    data-bs-target="#galleryImageModal"
+                    data-image-src="images/gallery/03.jpeg"
+                    data-image-alt="باقة ورد"
+                  >
                     <img
-                      src="images/flower.jpg"
+                      src="images/gallery/03.jpeg"
                       class="img-fluid rounded-3"
                       alt="باقة ورد"
-                      style="height: 180px; width: 100%; object-fit: cover"
+                      style="
+                        height: 180px;
+                        width: 100%;
+                        object-fit: cover;
+                        cursor: zoom-in;
+                      "
                     />
                   </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6">
-                  <a href="flowers-products.html" class="d-block">
+                  <a
+                    href="images/gallery/04.jpeg"
+                    class="d-block gallery-preview"
+                    data-bs-toggle="modal"
+                    data-bs-target="#galleryImageModal"
+                    data-image-src="images/gallery/04.jpeg"
+                    data-image-alt="ماء ورد"
+                  >
                     <img
-                      src="images/flowers-products.jpg"
+                      src="images/gallery/04.jpeg"
                       class="img-fluid rounded-3"
                       alt="ماء ورد"
-                      style="height: 180px; width: 100%; object-fit: cover"
+                      style="
+                        height: 180px;
+                        width: 100%;
+                        object-fit: cover;
+                        cursor: zoom-in;
+                      "
                     />
                   </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6">
-                  <a href="flowers-products.html" class="d-block">
+                  <a
+                    href="images/gallery/01.jpeg"
+                    class="d-block gallery-preview"
+                    data-bs-toggle="modal"
+                    data-bs-target="#galleryImageModal"
+                    data-image-src="images/gallery/01.jpeg"
+                    data-image-alt="دهن ورد"
+                  >
                     <img
-                      src="images/flowers-products.jpg"
+                      src="images/gallery/01.jpeg"
                       class="img-fluid rounded-3"
                       alt="دهن ورد"
-                      style="height: 180px; width: 100%; object-fit: cover"
+                      style="
+                        height: 180px;
+                        width: 100%;
+                        object-fit: cover;
+                        cursor: zoom-in;
+                      "
                     />
                   </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6">
-                  <a href="flowers-products.html" class="d-block">
+                  <a
+                    href="images/gallery/02.jpeg"
+                    class="d-block gallery-preview"
+                    data-bs-toggle="modal"
+                    data-bs-target="#galleryImageModal"
+                    data-image-src="images/gallery/02.jpeg"
+                    data-image-alt="قطف الورد"
+                  >
                     <img
-                      src="images/flower.jpg"
+                      src="images/gallery/02.jpeg"
                       class="img-fluid rounded-3"
                       alt="قطف الورد"
-                      style="height: 180px; width: 100%; object-fit: cover"
+                      style="
+                        height: 180px;
+                        width: 100%;
+                        object-fit: cover;
+                        cursor: zoom-in;
+                      "
                     />
                   </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6">
-                  <a href="flowers-products.html" class="d-block">
+                  <a
+                    href="images/gallery/03.jpeg"
+                    class="d-block gallery-preview"
+                    data-bs-toggle="modal"
+                    data-bs-target="#galleryImageModal"
+                    data-image-src="images/gallery/03.jpeg"
+                    data-image-alt="صابون الورد"
+                  >
                     <img
-                      src="images/flowers-products.jpg"
+                      src="images/gallery/03.jpeg"
                       class="img-fluid rounded-3"
                       alt="صابون الورد"
-                      style="height: 180px; width: 100%; object-fit: cover"
+                      style="
+                        height: 180px;
+                        width: 100%;
+                        object-fit: cover;
+                        cursor: zoom-in;
+                      "
                     />
                   </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6">
-                  <a href="flowers-products.html" class="d-block">
+                  <a
+                    href="images/gallery/04.jpeg"
+                    class="d-block gallery-preview"
+                    data-bs-toggle="modal"
+                    data-bs-target="#galleryImageModal"
+                    data-image-src="images/gallery/04.jpeg"
+                    data-image-alt="ورد فاخر"
+                  >
                     <img
-                      src="images/flower.jpg"
+                      src="images/gallery/04.jpeg"
                       class="img-fluid rounded-3"
                       alt="ورد فاخر"
-                      style="height: 180px; width: 100%; object-fit: cover"
+                      style="
+                        height: 180px;
+                        width: 100%;
+                        object-fit: cover;
+                        cursor: zoom-in;
+                      "
                     />
                   </a>
                 </div>
@@ -413,13 +640,41 @@
             </div>
 
             <div class="col-12 text-center mt-4">
-              <a href="flowers-products.html" class="btn custom-btn">
-                تسوق منتجات الورد
-              </a>
+              <div class="d-flex justify-content-end flex-wrap gap-2">
+                <a href="gallery.html" class="btn btn-outline-danger">
+                  المزيد
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      <div
+        class="modal fade"
+        id="galleryImageModal"
+        tabindex="-1"
+        aria-label="معاينة صورة المعرض"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-xl px-2">
+          <div class="modal-content border-0 bg-transparent">
+            <button
+              type="button"
+              class="btn-close btn-close-white position-absolute top-0 end-0 m-2 m-md-3 z-3"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+            <img
+              id="galleryImageModalImg"
+              src=""
+              class="img-fluid rounded-3"
+              alt="عرض الصورة"
+              style="background: #000"
+            />
+          </div>
+        </div>
+      </div>
 
       <section class="BgImage"></section>
       <section class="menu section-padding pb-3">
@@ -1794,6 +2049,27 @@
         updateCartCount();
 
         updateQtyControls();
+
+        let galleryModal = document.getElementById("galleryImageModal");
+        let galleryModalImg = document.getElementById("galleryImageModalImg");
+
+        if (galleryModal && galleryModalImg) {
+          galleryModal.addEventListener("show.bs.modal", function (event) {
+            let trigger = event.relatedTarget;
+
+            if (!trigger) return;
+
+            let src = trigger.getAttribute("data-image-src") || "";
+            let alt = trigger.getAttribute("data-image-alt") || "عرض الصورة";
+
+            galleryModalImg.src = src;
+            galleryModalImg.alt = alt;
+          });
+
+          galleryModal.addEventListener("hidden.bs.modal", function () {
+            galleryModalImg.src = "";
+          });
+        }
 
         document.addEventListener("click", function (e) {
           let addBtn = e.target.closest(".add-btn");
