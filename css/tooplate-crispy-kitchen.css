@@ -222,63 +222,74 @@ strong {
   background: transparent;
 }
 
-.nav-opening .navbar-toggler ~ .navbar-brand {
-  display: none;
-}
+/* Mobile navbar adjustments */
+@media screen and (max-width: 991px) {
+  /* Ensure navbar maintains fixed height */
+  .navbar.fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+  }
 
-.nav-opening .navbar-toggler ~ .cart-wrapper {
-  order: 2;
-}
+  /* Container should be relative for absolute positioning of collapse */
+  .navbar .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 55px; /* 10px padding + 35px content + 10px padding */
+  }
 
-.nav-opening .navbar-toggler ~ .collapse {
-  order: 3;
-}
+  /* Smooth fade transition for logo */
+  .navbar-brand {
+    transition: opacity 0.2s ease-in-out;
+  }
 
-/* .cart-res {
-  display: none !important;
-}
-.navbar-toggler[aria-expanded="true"] ~ .logo-img {
-  display: none;
-}
-.navbar-toggler[aria-expanded="true"] ~ .cart-res {
-  display: block;
-} */
+  /* Hide logo when menu is expanded */
+  .navbar-brand.hide-logo {
+    visibility: hidden;
+    opacity: 0;
+  }
 
-/* Move cart into logo spot when menu is open */
-.navbar {
-  position: relative;
-}
+  /* Cart stays in its natural position - no movement needed */
+  .cart-wrapper {
+    /* Remove any positioning - let it stay in normal flow */
+    position: static !important;
+    transform: none !important;
+  }
 
-.nav-opening .navbar-toggler ~ .cart-wrapper {
-  position: absolute;
-  top: 14px;
-  left: 15px;
-  right: auto;
-  transform: none;
-  margin: 0;
-  z-index: 1001;
-}
+  /* Hamburger/close button stays in its natural position */
+  .navbar-toggler {
+    position: static;
+  }
 
-/* Floating cart chip when menu is open */
-.nav-opening .navbar-toggler ~ .cart-wrapper .cart-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 14px;
-  padding: 6px 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
+  /* Make navbar-collapse appear BELOW the navbar bar */
+  .navbar-collapse {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background: var(--white-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1029;
+    margin: 0 !important;
+  }
 
-.nav-opening .navbar-toggler ~ .cart-wrapper #cart-count {
-  position: static;
-  background: var(--secondary-color);
-  color: #fff;
-  padding: 2px 6px;
-  border-radius: 999px;
-  font-size: 11px;
-  line-height: 1;
+  .navbar-collapse.collapsing {
+    transition: height 0.35s ease;
+  }
+
+  /* Ensure nav items have proper padding in mobile */
+  .navbar-collapse .navbar-nav {
+    padding: 10px 15px;
+    width: 100%;
+  }
+
+  .navbar-collapse .navbar-nav .nav-link {
+    padding: 10px 15px;
+  }
 }
 
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before,
@@ -1050,7 +1061,7 @@ body {
 
 .menu-sticky {
   position: sticky;
-  top: 88px;
+  top: 0;
   z-index: 20;
   background: var(--white-color);
   padding: 12px 0;
@@ -1282,4 +1293,76 @@ body {
   .menu-tabs {
     justify-content: flex-start;
   }
+}
+
+.gallery-preview,
+.rose-feature-link,
+.coffee-feature-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.gallery-preview img,
+.rose-feature-link img,
+.coffee-feature-link img {
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.coffee-feature-link {
+  border-radius: 0;
+}
+
+.gallery-preview::after,
+.rose-feature-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background-color 0.25s ease;
+  pointer-events: none;
+}
+
+.gallery-preview:hover,
+.rose-feature-link:hover,
+.coffee-feature-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-preview:hover::after,
+.rose-feature-link:hover::after {
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.gallery-preview:hover img,
+.rose-feature-link:hover img,
+.coffee-feature-link:hover img {
+  transform: scale(1.06);
+  filter: brightness(0.94) saturate(1.06);
+}
+
+#galleryImageModal .modal-dialog {
+  max-width: min(95vw, 1200px);
+}
+
+#galleryImageModal .modal-content {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+#galleryImageModalImg {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 95vw;
+  max-height: 85vh;
+  object-fit: contain;
 }
