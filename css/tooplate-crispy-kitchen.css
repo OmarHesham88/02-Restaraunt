@@ -193,6 +193,20 @@ strong {
   padding-bottom: 15px;
 }
 
+/* Tablet / small desktop: prevent navbar items from wrapping too early */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .navbar-expand-lg .nav-link {
+    font-size: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
 .navbar-nav .nav-link.active,
 .nav-link:focus,
 .nav-link:hover {
@@ -383,7 +397,10 @@ strong {
 }
 
 .site-menu-header {
-  background-image: url("../images/header/luisa-brimble-aFzg83dvnAI-unsplash.jpg");
+  background-image: url("../images/menu.jpg");
+}
+.site-breakfast-header {
+  background-image: url("../images/breakfast.jpg");
 }
 
 .site-news-header {
@@ -409,18 +426,38 @@ strong {
 .hero {
   position: relative;
   overflow: hidden;
-  padding-top: 20.542rem;
-  padding-bottom: 20.542rem;
   min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding-top: 9rem; /* space for fixed navbar */
+  padding-bottom: 5rem;
 }
 
 .hero .container {
-  position: absolute;
+  position: relative;
   z-index: 9;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
+  margin-top: 0;
+}
+
+.heroText .hero-logo {
+  width: min(320px, 80vw);
+  height: 110px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 480px) {
+  .heroText .hero-logo {
+    width: min(260px, 60vw) !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+.heroText .hero-title {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
 }
 
 .video-wrap {
@@ -442,7 +479,7 @@ strong {
 .carousel-image {
   width: 100%;
   height: 100%;
-  height: 500px;
+  height: 400px;
   max-height: 100%;
   object-fit: cover;
 }
@@ -945,6 +982,14 @@ strong {
     padding-top: 5px;
     padding-bottom: 10px;
   }
+  .navbar-nav {
+    white-space: normal;
+  }
+
+  .navbar-nav .nav-link {
+    white-space: normal;
+    line-height: 1.35;
+  }
 
   #BookingModal .modal-content {
     padding-bottom: 200px;
@@ -973,10 +1018,28 @@ strong {
     max-height: 310px;
   }
 
+  .hero {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+  }
+
+  .heroText .hero-logo {
+    height: 103px;
+  }
+
   .hero-carousel .carousel-control-prev,
   .hero-carousel .carousel-control-next {
-    width: 60px;
-    height: 60px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .hero-carousel .carousel-control-prev {
+    right: 52px;
+  }
+
+  .hero-carousel .carousel-control-prev-icon,
+  .hero-carousel .carousel-control-next-icon {
+    line-height: 52px;
   }
 }
 
