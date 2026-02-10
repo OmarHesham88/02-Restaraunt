@@ -215,6 +215,24 @@
           width: 100%;
         }
       }
+
+      /* Very small screens: stack controls under the item text */
+      @media (max-width: 399.98px) {
+        .cart-item-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cart-item-controls {
+          width: 100%;
+          justify-content: flex-start;
+        }
+
+        .cart-item-meta {
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 2px;
+        }
+      }
     </style>
   </head>
 
