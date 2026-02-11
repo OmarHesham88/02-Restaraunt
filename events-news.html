@@ -26,6 +26,69 @@
 
     <link href="css/bootstrap-icons.css" rel="stylesheet" />
     <link href="css/tooplate-crispy-kitchen.css" rel="stylesheet" />
+    <style>
+      .event-card {
+        background: #f6f3ef;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+
+      .event-card-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .event-card-body {
+        padding: 1rem 1.1rem 1.2rem;
+      }
+
+      .event-card-title {
+        font-weight: 700;
+        margin: 0 0 0.6rem;
+      }
+
+      .event-card-text {
+        margin: 0;
+        color: #495057;
+      }
+
+      .events-pagination .page-link {
+        color: var(--dark-color);
+        border-color: rgba(0, 0, 0, 0.14);
+        background: #fff;
+        border-radius: 10px;
+        margin: 0 4px;
+        min-width: 42px;
+        text-align: center;
+      }
+
+      .events-pagination .page-item.active .page-link {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: #fff;
+      }
+
+      .events-pagination .page-link:hover {
+        background-color: rgba(244, 71, 73, 0.08);
+        border-color: var(--secondary-color);
+        color: var(--primary-color);
+      }
+
+      .events-pagination .page-link:focus {
+        box-shadow: 0 0 0 0.2rem rgba(244, 71, 73, 0.22);
+      }
+
+      .events-pagination .page-item.disabled .page-link {
+        color: rgba(0, 0, 0, 0.35);
+        border-color: rgba(0, 0, 0, 0.08);
+        background: #fff;
+      }
+    </style>
   </head>
 
   <body class="has-fixed-navbar">
@@ -79,7 +142,9 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active" href="events-news.html">فعاليات و أخبار</a>
+              <a class="nav-link active" href="events-news.html"
+                >فعاليات و أخبار</a
+              >
             </li>
           </ul>
         </div>
@@ -111,144 +176,187 @@
 
       <section class="section-padding bg-white">
         <div class="container">
-          <div class="row mb-4">
-            <div class="col-12">
-              <h2 class="mb-3">الفعاليات القادمة</h2>
-              <p class="mb-0">
-                نحرص دائماً على خلق تجربة مختلفة تجمع بين القهوة، الأجواء الهادئة،
-                والأنشطة المميزة لعشاق التفاصيل.
-              </p>
-            </div>
-          </div>
-
-          <div class="row g-4">
+          <div class="row g-4" id="events-grid">
             <div class="col-lg-4 col-md-6 col-12">
-              <a href="new.html" class="text-decoration-none text-dark d-block h-100">
-                <div class="p-4 h-100 rounded-4 shadow-sm" style="background: #e6e6e6">
+              <article class="event-card">
+                <img
+                  src="images/slide/1.jpg"
+                  alt="ورشة تحضير القهوة المختصة"
+                  class="event-card-image"
+                />
+                <div class="event-card-body">
                   <span class="badge bg-dark mb-3">15 فبراير 2026</span>
-                  <h5 class="mb-3">ورشة تحضير القهوة المختصة</h5>
-                  <p class="mb-0">
-                    ورشة عملية للمبتدئين لتعلم أساسيات الاستخلاص، درجات الطحن، وتوازن
-                    النكهات باستخدام أدوات منزلية بسيطة.
+                  <h5 class="event-card-title">ورشة تحضير القهوة المختصة</h5>
+                  <p class="event-card-text">
+                    ورشة عملية للمبتدئين لتعلم أساسيات الاستخلاص، درجات الطحن،
+                    وتوازن النكهات باستخدام أدوات منزلية بسيطة.
                   </p>
                 </div>
-              </a>
+              </article>
             </div>
 
             <div class="col-lg-4 col-md-6 col-12">
-              <a href="new.html" class="text-decoration-none text-dark d-block h-100">
-                <div class="p-4 h-100 rounded-4 shadow-sm" style="background: #e6e6e6">
+              <article class="event-card">
+                <img
+                  src="images/slide/2.jpg"
+                  alt="ليلة المخبوزات الموسمية"
+                  class="event-card-image"
+                />
+                <div class="event-card-body">
                   <span class="badge bg-dark mb-3">22 فبراير 2026</span>
-                  <h5 class="mb-3">ليلة المخبوزات الموسمية</h5>
-                  <p class="mb-0">
-                    قائمة محدودة ليوم واحد فقط تضم مخبوزات موسمية طازجة مع خيارات قهوة
-                    مقترنة بكل صنف.
+                  <h5 class="event-card-title">ليلة المخبوزات الموسمية</h5>
+                  <p class="event-card-text">
+                    قائمة محدودة ليوم واحد فقط تضم مخبوزات موسمية طازجة مع
+                    خيارات قهوة مقترنة بكل صنف.
                   </p>
                 </div>
-              </a>
+              </article>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="event-card">
+                <img
+                  src="images/slide/3.jpg"
+                  alt="جلسة تذوق من محاصيل المزرعة"
+                  class="event-card-image"
+                />
+                <div class="event-card-body">
+                  <span class="badge bg-dark mb-3">1 مارس 2026</span>
+                  <h5 class="event-card-title">جلسة تذوق من محاصيل المزرعة</h5>
+                  <p class="event-card-text">
+                    جلسة تذوق موجهة للتعرف على فروقات النكهات بين المحاصيل مع
+                    شرح طريقة التحميص المناسبة لكل محصول.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="event-card">
+                <img
+                  src="images/slide/4.jpg"
+                  alt="لقاء مجتمع محبي القهوة"
+                  class="event-card-image"
+                />
+                <div class="event-card-body">
+                  <span class="badge bg-dark mb-3">5 مارس 2026</span>
+                  <h5 class="event-card-title">لقاء مجتمع محبي القهوة</h5>
+                  <p class="event-card-text">
+                    لقاء مفتوح لعشاق القهوة لمشاركة التجارب، تبادل الترشيحات،
+                    وتجربة وصفات تحضير جديدة داخل الفرع.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="event-card">
+                <img
+                  src="images/coffe/right-image.jpeg"
+                  alt="إطلاق قائمة الربيع"
+                  class="event-card-image"
+                />
+                <div class="event-card-body">
+                  <span class="badge bg-dark mb-3">10 مارس 2026</span>
+                  <h5 class="event-card-title">إطلاق قائمة الربيع</h5>
+                  <p class="event-card-text">
+                    إضافة مشروبات موسمية بنكهات الورد والحمضيات مع خيارات
+                    باردة وساخنة تناسب مختلف الأذواق.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="event-card">
+                <img
+                  src="images/coffe/left-image.jpeg"
+                  alt="مسابقة أفضل لاتيه آرت"
+                  class="event-card-image"
+                />
+                <div class="event-card-body">
+                  <span class="badge bg-dark mb-3">14 مارس 2026</span>
+                  <h5 class="event-card-title">مسابقة أفضل لاتيه آرت</h5>
+                  <p class="event-card-text">
+                    منافسة أسبوعية بين الباريستا لتقديم أجمل رسم بالحليب مع
+                    تصويت مباشر من زوار المقهى.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="event-card">
+                <img
+                  src="images/coffee/coffee-beans.jpg"
+                  alt="وصول محصول بن إثيوبي جديد"
+                  class="event-card-image"
+                />
+                <div class="event-card-body">
+                  <span class="badge bg-dark mb-3">18 مارس 2026</span>
+                  <h5 class="event-card-title">وصول محصول بن إثيوبي جديد</h5>
+                  <p class="event-card-text">
+                    بدأنا تقديم محصول محدود بنكهات فاكهية واضحة ولمسة زهرية،
+                    متاح للتحضير المقطر والإسبريسو.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="event-card">
+                <img
+                  src="images/coffee/coffee-cups.jpg"
+                  alt="عرض الكوب الثاني بنصف السعر"
+                  class="event-card-image"
+                />
+                <div class="event-card-body">
+                  <span class="badge bg-dark mb-3">21 مارس 2026</span>
+                  <h5 class="event-card-title">عرض الكوب الثاني بنصف السعر</h5>
+                  <p class="event-card-text">
+                    لفترة محدودة يومي الخميس والجمعة، احصل على الكوب الثاني
+                    بنصف السعر على جميع المشروبات الساخنة.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="event-card">
+                <img
+                  src="images/gallery/01.jpeg"
+                  alt="تحديث ركن الورد والهدايا"
+                  class="event-card-image"
+                />
+                <div class="event-card-body">
+                  <span class="badge bg-dark mb-3">24 مارس 2026</span>
+                  <h5 class="event-card-title">تحديث ركن الورد والهدايا</h5>
+                  <p class="event-card-text">
+                    تم إضافة تنسيقات جديدة من ورد الطائف مع خيارات تغليف أنيقة
+                    مناسبة للهدايا والمناسبات الخاصة.
+                  </p>
+                </div>
+              </article>
             </div>
 
             <div class="col-lg-4 col-md-6 col-12">
-              <a href="new.html" class="text-decoration-none text-dark d-block h-100">
-                <div class="p-4 h-100 rounded-4 shadow-sm" style="background: #e6e6e6">
-                  <span class="badge bg-dark mb-3">1 مارس 2026</span>
-                  <h5 class="mb-3">جلسة تذوق من محاصيل المزرعة</h5>
-                  <p class="mb-0">
-                    جلسة تذوق موجهة للتعرف على فروقات النكهات بين المحاصيل مع شرح طريقة
-                    التحميص المناسبة لكل محصول.
+              <article class="event-card">
+                <img
+                  src="images/gallery/04.jpeg"
+                  alt="إعلان فعالية نهاية الشهر"
+                  class="event-card-image"
+                />
+                <div class="event-card-body">
+                  <span class="badge bg-dark mb-3">30 مارس 2026</span>
+                  <h5 class="event-card-title">إعلان فعالية نهاية الشهر</h5>
+                  <p class="event-card-text">
+                    فعالية ختامية تشمل جلسة موسيقية خفيفة، تذوق مشروبات مختارة،
+                    وعروض حصرية لزوار الفرع طوال المساء.
                   </p>
                 </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="news section-padding">
-        <div class="container">
-          <div class="row mb-4">
-            <div class="col-12">
-              <h2 class="mb-3">آخر الأخبار</h2>
-              <p class="mb-0">
-                تحديثاتنا تشمل المنتجات الجديدة، مواعيد التوصيل، وأي إضافات مهمة في
-                القائمة.
-              </p>
+              </article>
             </div>
           </div>
 
-          <div class="row g-4">
-            <div class="col-12">
-              <a href="new.html" class="text-decoration-none text-dark d-block">
-                <div
-                  class="news-thumb d-flex flex-column flex-md-row align-items-start gap-3 p-4 rounded-4 shadow-sm"
-                  style="background: #f0f0f0"
-                >
-                  <span class="badge bg-success">جديد</span>
-                  <div>
-                    <h5 class="mb-2">إطلاق مشروب الموسم: آيس لاتيه الفانيلا المدخنة</h5>
-                    <p class="mb-1" style="color: #4f4f4f">8 فبراير 2026</p>
-                    <p class="mb-0">
-                      أضفنا مشروباً جديداً بطابع ناعم ونكهة متوازنة، متوفر بحجمين ضمن
-                      قائمة المشروبات الباردة.
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-12">
-              <a href="new.html" class="text-decoration-none text-dark d-block">
-                <div
-                  class="news-thumb d-flex flex-column flex-md-row align-items-start gap-3 p-4 rounded-4 shadow-sm"
-                  style="background: #f0f0f0"
-                >
-                  <span class="badge bg-primary">تحديث</span>
-                  <div>
-                    <h5 class="mb-2">توسيع ساعات خدمة الطلبات الخارجية</h5>
-                    <p class="mb-1" style="color: #4f4f4f">5 فبراير 2026</p>
-                    <p class="mb-0">
-                      تم تمديد استقبال طلبات التيك أواي حتى الساعة 11 مساءً خلال أيام
-                      نهاية الأسبوع لتلبية الطلب المتزايد.
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-12">
-              <a href="new.html" class="text-decoration-none text-dark d-block">
-                <div
-                  class="news-thumb d-flex flex-column flex-md-row align-items-start gap-3 p-4 rounded-4 shadow-sm"
-                  style="background: #f0f0f0"
-                >
-                  <span class="badge bg-warning text-dark">إعلان</span>
-                  <div>
-                    <h5 class="mb-2">إضافة خيارات جديدة لقائمة الفطور</h5>
-                    <p class="mb-1" style="color: #4f4f4f">1 فبراير 2026</p>
-                    <p class="mb-0">
-                      تم إضافة أصناف فطور خفيفة مع بدائل متنوعة لتناسب مختلف الأذواق،
-                      مع الحفاظ على نفس جودة المكونات الطازجة.
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-padding bg-white">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 col-12 mx-auto text-center">
-              <h3 class="mb-3">لديك فعالية خاصة؟</h3>
-              <p class="mb-4">
-                يمكننا تجهيز باقات قهوة وضيافة للفعاليات الصغيرة والمتوسطة داخل
-                المكان أو كطلبات خارجية.
-              </p>
-              <a href="contact.html" class="custom-btn btn btn-dark">تواصل معنا الآن</a>
-            </div>
-          </div>
+          <nav class="mt-5" aria-label="Pagination for events and news">
+            <ul
+              class="pagination justify-content-center events-pagination"
+              id="events-pagination"
+            ></ul>
+          </nav>
         </div>
       </section>
     </main>
@@ -364,8 +472,87 @@
         }
       }
 
+      function initEventsPagination() {
+        const perPage = 9;
+        const grid = document.getElementById("events-grid");
+        const pagination = document.getElementById("events-pagination");
+        if (!grid || !pagination) return;
+
+        const items = Array.from(grid.children);
+
+        if (items.length === 0) return;
+
+        const totalPages = Math.ceil(items.length / perPage);
+        let currentPage = 1;
+
+        function renderPage(page, smoothScroll = true) {
+          currentPage = page;
+          const start = (page - 1) * perPage;
+          const end = start + perPage;
+
+          items.forEach((item, index) => {
+            item.classList.toggle("d-none", !(index >= start && index < end));
+          });
+
+          renderPagination();
+          if (smoothScroll) {
+            window.scrollTo({ top: grid.offsetTop - 120, behavior: "smooth" });
+          }
+        }
+
+        function createPageItem(label, page, disabled, active) {
+          const li = document.createElement("li");
+          li.className = "page-item";
+          if (disabled) li.classList.add("disabled");
+          if (active) li.classList.add("active");
+
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "page-link";
+          btn.textContent = label;
+          btn.setAttribute("aria-label", String(label));
+          btn.disabled = disabled;
+          btn.addEventListener("click", () => renderPage(page));
+
+          li.appendChild(btn);
+          return li;
+        }
+
+        function renderPagination() {
+          pagination.innerHTML = "";
+
+          if (totalPages <= 1) {
+            pagination.classList.add("d-none");
+            return;
+          }
+          pagination.classList.remove("d-none");
+
+          pagination.appendChild(
+            createPageItem("السابق", currentPage - 1, currentPage === 1, false)
+          );
+
+          for (let i = 1; i <= totalPages; i++) {
+            pagination.appendChild(
+              createPageItem(String(i), i, false, i === currentPage)
+            );
+          }
+
+          pagination.appendChild(
+            createPageItem(
+              "التالي",
+              currentPage + 1,
+              currentPage === totalPages,
+              false
+            )
+          );
+        }
+
+        renderPage(1, false);
+      }
+
       document.addEventListener("DOMContentLoaded", function () {
         updateCartCount();
+        initEventsPagination();
       });
     </script>
   </body>

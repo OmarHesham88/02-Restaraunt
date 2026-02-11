@@ -55,6 +55,7 @@
       #galleryImageModal .modal-content {
         width: fit-content;
         margin: 0 auto;
+        position: relative;
       }
 
       #galleryImageModalImg {
@@ -64,6 +65,58 @@
         max-width: 95vw;
         max-height: 85vh;
         object-fit: contain;
+      }
+
+      .gallery-modal-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 52px;
+        height: 52px;
+        border: 0;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.55);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        z-index: 4;
+      }
+
+      .gallery-modal-nav:hover {
+        background: rgba(0, 0, 0, 0.72);
+      }
+
+      .gallery-modal-nav:focus-visible {
+        outline: 3px solid rgba(244, 71, 73, 0.45);
+        outline-offset: 2px;
+      }
+
+      .gallery-modal-nav i {
+        font-size: 1.45rem;
+        line-height: 1;
+      }
+
+      #galleryModalPrev {
+        right: 12px;
+      }
+
+      #galleryModalNext {
+        left: 12px;
+      }
+
+      @media (max-width: 575.98px) {
+        #galleryImageModalImg {
+          max-height: 72vh;
+        }
+
+        .gallery-modal-nav {
+          width: 42px;
+          height: 42px;
+        }
+
+        .gallery-modal-nav i {
+          font-size: 1.15rem;
+        }
       }
     </style>
   </head>
@@ -254,6 +307,22 @@
       >
         <div class="modal-dialog modal-dialog-centered modal-xl px-2">
           <div class="modal-content border-0 bg-transparent">
+            <button
+              type="button"
+              class="gallery-modal-nav"
+              id="galleryModalPrev"
+              aria-label="الصورة السابقة"
+            >
+              <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="gallery-modal-nav"
+              id="galleryModalNext"
+              aria-label="الصورة التالية"
+            >
+              <i class="bi bi-chevron-left" aria-hidden="true"></i>
+            </button>
             <button
               type="button"
               class="btn-close btn-close-white position-absolute top-0 end-0 m-2 m-md-3 z-3"
@@ -450,28 +519,77 @@
 
         let galleryModalEl = document.getElementById("galleryImageModal");
         let galleryModalImg = document.getElementById("galleryImageModalImg");
+        let galleryPrevBtn = document.getElementById("galleryModalPrev");
+        let galleryNextBtn = document.getElementById("galleryModalNext");
 
         if (galleryModalEl && galleryModalImg && window.bootstrap) {
           let galleryModal = new bootstrap.Modal(galleryModalEl);
+          let galleryLinks = Array.from(document.querySelectorAll(".gallery-card"));
+          let activeIndex = -1;
 
-          document.querySelectorAll(".gallery-card").forEach((link) => {
+          function showImageAt(index) {
+            if (!galleryLinks.length) return;
+
+            let normalizedIndex =
+              (index + galleryLinks.length) % galleryLinks.length;
+            let activeLink = galleryLinks[normalizedIndex];
+            let src = activeLink.getAttribute("href") || "";
+            let alt =
+              activeLink.querySelector("img")?.getAttribute("alt") || "Gallery image";
+
+            activeIndex = normalizedIndex;
+            galleryModalImg.src = src;
+            galleryModalImg.alt = alt;
+          }
+
+          function showRelative(step) {
+            if (!galleryLinks.length) return;
+            if (activeIndex < 0) {
+              showImageAt(0);
+              return;
+            }
+            showImageAt(activeIndex + step);
+          }
+
+          galleryLinks.forEach((link, index) => {
             link.addEventListener("click", function (event) {
               event.preventDefault();
-              let src = link.getAttribute("href") || "";
-              let alt =
-                link.querySelector("img")?.getAttribute("alt") || "عرض الصورة";
-
-              galleryModalImg.src = src;
-              galleryModalImg.alt = alt;
+              showImageAt(index);
               galleryModal.show();
             });
           });
 
+          if (galleryPrevBtn) {
+            galleryPrevBtn.addEventListener("click", function () {
+              showRelative(-1);
+            });
+          }
+
+          if (galleryNextBtn) {
+            galleryNextBtn.addEventListener("click", function () {
+              showRelative(1);
+            });
+          }
+
+          document.addEventListener("keydown", function (event) {
+            if (!galleryModalEl.classList.contains("show")) return;
+
+            if (event.key === "ArrowLeft") {
+              event.preventDefault();
+              showRelative(-1);
+            } else if (event.key === "ArrowRight") {
+              event.preventDefault();
+              showRelative(1);
+            }
+          });
+
           galleryModalEl.addEventListener("hidden.bs.modal", function () {
             galleryModalImg.src = "";
+            activeIndex = -1;
           });
         }
       });
     </script>
   </body>
 </html>
+
