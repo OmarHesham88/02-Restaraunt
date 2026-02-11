@@ -25,7 +25,12 @@
       rel="stylesheet"
     />
 
-    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+    
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+<link href="css/bootstrap-icons.css" rel="stylesheet" />
 
     <link href="css/tooplate-crispy-kitchen.css" rel="stylesheet" />
   </head>
@@ -46,7 +51,19 @@
         </button>
 
         <a class="navbar-brand" href="index.html">
-          <img src="images/header-logo.png" alt="Crispy Kitchen" height="40" />
+          <!-- <div class="cart-wrapper position-relative me-3 cart-res">
+            <a href="cart.html" class="cart-btn">
+              <i class="bi-cart3"></i>
+
+              <span id="cart-count">0</span>
+            </a>
+          </div> -->
+          <img
+            src="images/header-logo.png"
+            class="logo-img"
+            alt="Crispy Kitchen"
+            height="40"
+          />
         </a>
 
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -56,7 +73,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active" href="breakfast.html">العشاء</a>
+              <a class="nav-link" href="breakfast.html">الفطور الصباحى</a>
             </li>
 
             <li class="nav-item">
@@ -68,11 +85,13 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">تواصل معنا</a>
-            </li>
-
-            <li class="nav-item">
               <a class="nav-link" href="about.html">من نحن</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="events-news.html">الفعاليات والأخبار</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">معرض الصور</a>
             </li>
           </ul>
         </div>
@@ -904,27 +923,70 @@
           </div>
 
           <div class="col-lg-4 col-md-6 col-xs-12 tooplate-mt30">
-            <h6 class="text-white mb-lg-4 mb-3">مواقع التواصل الاجتماعي</h6>
+            <h6 class="text-white mb-lg-4 mb-3">
+              <a
+                href="contact.html"
+                class="text-white text-decoration-none d-inline-flex align-items-center gap-2"
+                aria-label="الانتقال إلى صفحة التواصل معنا"
+              >
+                للتواصل معنا
+                <i class="bi-arrow-left-short" aria-hidden="true"></i>
+              </a>
+            </h6>
+
+            <p class="mb-3" style="color: rgba(255, 255, 255, 0.75)">
+              يسعدنا استقبال رسائلك واستفساراتك.
+            </p>
+
+            <a href="contact.html" class="custom-btn btn btn-dark mb-4"
+              >تواصل الآن</a
+            >
 
             <ul class="social-icon">
-              <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+              <li>
+                <a href="#" class="social-icon-link" aria-label="Snapchat">
+                  <i class="fa-brands fa-snapchat"></i>
+                </a>
+              </li>
 
-              <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+              <li>
+                <a href="#" class="social-icon-link" aria-label="TikTok">
+                  <i class="fa-brands fa-tiktok"></i>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-icon-link" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
 
               <li>
                 <a
                   href="https://twitter.com/search?q=tooplate.com&src=typed_query&f=live"
                   target="_blank"
-                  class="social-icon-link bi-twitter"
-                ></a>
+                  class="social-icon-link"
+                  aria-label="X"
+                >
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
               </li>
 
-              <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+              <li>
+                <a href="#" class="social-icon-link" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-icon-link" aria-label="YouTube">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </li>
             </ul>
 
             <p class="copyright-text tooplate-mt60">
-              جميع الحقوق محفوظة لـ Crispy Kitchen © 2022 Crispy Kitchen Co.,
-              Ltd.
+              جميع الحقوق محفوظة لـ Novella 2026, Ltd.
               <br />Design:
               <a rel="nofollow" href="https://www.tooplate.com/" target="_blank"
                 >Tooplate</a
@@ -1164,3 +1226,4 @@
     </script>
   </body>
 </html>
+
