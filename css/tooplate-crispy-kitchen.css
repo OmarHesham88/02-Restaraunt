@@ -393,6 +393,9 @@ strong {
 }
 
 .site-about-header {
+  background-image: url("../images/header/briana-tozour-V_Nkf1E-vYA-unsplash.jpg");
+}
+.site-about-us-header {
   background-image: url("../images/about.jpeg");
 }
 
@@ -409,16 +412,38 @@ strong {
 .site-news-header {
   background-image: url("../images/header/priscilla-du-preez-W3SEyZODn8U-unsplash.jpg");
 }
-.site-events-header {
-  background-image: url("../images/news.jpeg");
-}
 
 .site-contact-header {
   background-image: url("../images/contact.jpeg");
 }
-
+.site-events-header {
+  background-image: url("../images/news.jpeg");
+}
 /* .site-contact-header {
   background-image: url("../images/header/rod-long-I79Pgmhmy5M-unsplash.jpg");
+} */
+
+/* .site-about-header {
+  background-image: url("../images/about.jpeg");
+}
+
+.site-menu-header {
+  background-image: url("../images/menu.jpg");
+}
+.site-breakfast-header {
+  background-image: url("../images/breakfast.jpg");
+}
+.site-dinner-header {
+  background-image: url("../images/dinner.jpg");
+}
+
+.site-news-header {
+  background-image: url("../images/header/priscilla-du-preez-W3SEyZODn8U-unsplash.jpg");
+}
+
+
+.site-contact-header {
+  background-image: url("../images/contact.jpeg");
 } */
 
 .overlay {
