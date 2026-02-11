@@ -393,7 +393,7 @@ strong {
 }
 
 .site-about-header {
-  background-image: url("../images/header/briana-tozour-V_Nkf1E-vYA-unsplash.jpg");
+  background-image: url("../images/about.jpeg");
 }
 
 .site-menu-header {
@@ -409,10 +409,17 @@ strong {
 .site-news-header {
   background-image: url("../images/header/priscilla-du-preez-W3SEyZODn8U-unsplash.jpg");
 }
+.site-events-header {
+  background-image: url("../images/news.jpeg");
+}
 
 .site-contact-header {
-  background-image: url("../images/header/rod-long-I79Pgmhmy5M-unsplash.jpg");
+  background-image: url("../images/contact.jpeg");
 }
+
+/* .site-contact-header {
+  background-image: url("../images/header/rod-long-I79Pgmhmy5M-unsplash.jpg");
+} */
 
 .overlay {
   background: linear-gradient(to top, var(--dark-color), transparent 100%);

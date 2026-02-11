@@ -24,12 +24,11 @@
       rel="stylesheet"
     />
 
-    
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       rel="stylesheet"
     />
-<link href="css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
     <link href="css/tooplate-crispy-kitchen.css" rel="stylesheet" />
     <style>
       .event-card {
@@ -149,7 +148,9 @@
               <a class="nav-link" href="about.html">من نحن</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="events-news.html">الفعاليات والأخبار</a>
+              <a class="nav-link active" href="events-news.html"
+                >الفعاليات والأخبار</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="gallery.html">معرض الصور</a>
@@ -168,7 +169,7 @@
     </nav>
 
     <main>
-      <header class="site-header site-about-header">
+      <header class="site-header site-events-header">
         <div class="container">
           <div class="row">
             <div class="col-lg-10 col-12 mx-auto">
@@ -265,8 +266,8 @@
                   <span class="badge bg-dark mb-3">10 مارس 2026</span>
                   <h5 class="event-card-title">إطلاق قائمة الربيع</h5>
                   <p class="event-card-text">
-                    إضافة مشروبات موسمية بنكهات الورد والحمضيات مع خيارات
-                    باردة وساخنة تناسب مختلف الأذواق.
+                    إضافة مشروبات موسمية بنكهات الورد والحمضيات مع خيارات باردة
+                    وساخنة تناسب مختلف الأذواق.
                   </p>
                 </div>
               </article>
@@ -316,8 +317,8 @@
                   <span class="badge bg-dark mb-3">21 مارس 2026</span>
                   <h5 class="event-card-title">عرض الكوب الثاني بنصف السعر</h5>
                   <p class="event-card-text">
-                    لفترة محدودة يومي الخميس والجمعة، احصل على الكوب الثاني
-                    بنصف السعر على جميع المشروبات الساخنة.
+                    لفترة محدودة يومي الخميس والجمعة، احصل على الكوب الثاني بنصف
+                    السعر على جميع المشروبات الساخنة.
                   </p>
                 </div>
               </article>
@@ -579,12 +580,12 @@
           pagination.classList.remove("d-none");
 
           pagination.appendChild(
-            createPageItem("السابق", currentPage - 1, currentPage === 1, false)
+            createPageItem("السابق", currentPage - 1, currentPage === 1, false),
           );
 
           for (let i = 1; i <= totalPages; i++) {
             pagination.appendChild(
-              createPageItem(String(i), i, false, i === currentPage)
+              createPageItem(String(i), i, false, i === currentPage),
             );
           }
 
@@ -593,8 +594,8 @@
               "التالي",
               currentPage + 1,
               currentPage === totalPages,
-              false
-            )
+              false,
+            ),
           );
         }
 
@@ -608,4 +609,3 @@
     </script>
   </body>
 </html>
-
