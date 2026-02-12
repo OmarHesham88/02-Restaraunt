@@ -11,12 +11,11 @@
       rel="stylesheet"
     />
 
-    
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       rel="stylesheet"
     />
-<!-- Icons -->
+    <!-- Icons -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
@@ -432,11 +431,7 @@
             </ul>
 
             <p class="copyright-text tooplate-mt60">
-              جميع الحقوق محفوظة لـ Novella 2026, Ltd.
-              <br />Design:
-              <a rel="nofollow" href="https://www.tooplate.com/" target="_blank"
-                >Tooplate</a
-              >
+              جميع الحقوق محفوظة لدى Novella 2026
             </p>
           </div>
         </div>
@@ -530,7 +525,7 @@
                       <div class="cart-item-name">${escapeHtml(item.name)}</div>
                       <div class="cart-item-meta" dir="ltr">
                         <span class="item-line-total">$${itemTotal.toFixed(
-                          2
+                          2,
                         )}</span>
                         <span class="item-eq">= $${unitPrice.toFixed(2)} × ${qty}</span>
                       </div>
@@ -617,7 +612,7 @@
       function updateNavbarCount() {
         let totalQty = cart.reduce(
           (sum, item) => sum + (Number(item.quantity) || 0),
-          0
+          0,
         );
         let countEl = document.getElementById("cart-count");
         if (countEl) {
@@ -632,4 +627,3 @@
     <script src="js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-
