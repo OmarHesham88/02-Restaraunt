@@ -48,6 +48,34 @@
         border: 1px solid #f1dcdc;
       }
 
+      .delivery-slot-card {
+        background: #fff;
+        border: 1px solid #f1dcdc;
+        border-radius: 14px;
+        padding: 20px;
+      }
+
+      .delivery-time-grid {
+        display: grid;
+        grid-template-columns: minmax(180px, 0.9fr) 140px 140px 110px;
+        gap: 12px;
+        align-items: end;
+      }
+
+      .delivery-date-wrap .form-control {
+        max-width: 240px;
+      }
+
+      @media (max-width: 575.98px) {
+        .delivery-time-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .delivery-date-wrap .form-control {
+          max-width: none;
+        }
+      }
+
       .map-placeholder {
         background: #f5f5f5;
         border-radius: 12px;
@@ -208,6 +236,44 @@
               </div>
 
               <hr class="my-4" />
+
+              <div class="delivery-slot-card mb-4">
+                <h5 class="mb-3">موعد التوصيل</h5>
+                <div class="delivery-time-grid">
+                  <div class="delivery-date-wrap">
+                    <label class="form-label" for="delivery-date"
+                      >تاريخ التوصيل</label
+                    >
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="delivery-date"
+                    />
+                  </div>
+                  <div>
+                    <label class="form-label" for="delivery-hour">الساعة</label>
+                    <select class="form-select" id="delivery-hour">
+                      <option value="" selected>--</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="form-label" for="delivery-minute"
+                      >الدقائق</label
+                    >
+                    <select class="form-select" id="delivery-minute">
+                      <option value="" selected>--</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="form-label" for="delivery-period">الفترة</label>
+                    <select class="form-select" id="delivery-period">
+                      <option value="" selected>--</option>
+                      <option value="AM">AM</option>
+                      <option value="PM">PM</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
 
               <div class="payment-summary mb-4">
                 <h5 class="mb-3">ملخص الطلب</h5>
@@ -400,7 +466,33 @@
         document.getElementById("grand-total").textContent = grand.toFixed(2);
       }
 
+      function setupDeliveryTimeSelectors() {
+        let hourSelect = document.getElementById("delivery-hour");
+        let minuteSelect = document.getElementById("delivery-minute");
+
+        if (hourSelect) {
+          for (let hour = 1; hour <= 12; hour += 1) {
+            let val = String(hour).padStart(2, "0");
+            let option = document.createElement("option");
+            option.value = val;
+            option.textContent = val;
+            hourSelect.appendChild(option);
+          }
+        }
+
+        if (minuteSelect) {
+          for (let min = 0; min <= 45; min += 15) {
+            let val = String(min).padStart(2, "0");
+            let option = document.createElement("option");
+            option.value = val;
+            option.textContent = val;
+            minuteSelect.appendChild(option);
+          }
+        }
+      }
+
       document.addEventListener("DOMContentLoaded", function () {
+        setupDeliveryTimeSelectors();
         updateCartCount();
         updateTotals();
       });

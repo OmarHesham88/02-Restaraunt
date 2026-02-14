@@ -32,6 +32,54 @@
     <link href="css/bootstrap-icons.css" rel="stylesheet" />
 
     <link href="css/tooplate-crispy-kitchen.css" rel="stylesheet" />
+    <style>
+      .flowers-mode-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 18px;
+        flex-wrap: wrap;
+      }
+
+      .flowers-mode-tab {
+        border: 1px solid rgba(0, 0, 0, 0.18);
+        background: #fff;
+        color: #212529;
+        font-weight: 700;
+        padding: 10px 20px;
+        border-radius: 999px;
+      }
+
+      .flowers-mode-tab.active {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+        color: #fff;
+      }
+
+      .flowers-mode-tab:focus-visible {
+        outline: 3px solid rgba(244, 71, 73, 0.3);
+        outline-offset: 2px;
+      }
+
+      #flowers-selection-hint {
+        text-align: center;
+        margin-bottom: 16px;
+        color: #6c757d;
+        font-weight: 600;
+      }
+
+      .fixed-min-note {
+        display: block;
+        flex: 0 0 100%;
+        width: 100%;
+        margin-top: 6px;
+        margin-bottom: 2px;
+        color: #6c757d;
+        font-size: 0.85rem;
+        font-weight: 600;
+        line-height: 1.45;
+      }
+    </style>
   </head>
 
   <body class="has-fixed-navbar">
@@ -122,12 +170,49 @@
 
       <section class="menu section-padding" style="padding-top: 120px">
         <div class="container">
-          <div class="row">
+          <div class="row products-locked" id="flowers-products-row">
             <div class="col-12">
               <h2 class="text-center mb-lg-5 mb-4">منتجات الورد</h2>
+
+              <div class="flowers-mode-tabs" role="tablist" aria-label="أنواع منتجات الورد">
+                <button
+                  type="button"
+                  class="flowers-mode-tab"
+                  data-mode="rose-oil"
+                  aria-selected="false"
+                >
+                  دهن الورد
+                </button>
+                <button
+                  type="button"
+                  class="flowers-mode-tab"
+                  data-mode="bride-water"
+                  aria-selected="false"
+                >
+                  ماء العروس
+                </button>
+                <button
+                  type="button"
+                  class="flowers-mode-tab"
+                  data-mode="rose-water"
+                  aria-selected="false"
+                >
+                  ماء الورد
+                </button>
+                <button
+                  type="button"
+                  class="flowers-mode-tab"
+                  data-mode="other"
+                  aria-selected="false"
+                >
+                  نوع آخر
+                </button>
+              </div>
+
+              <p id="flowers-selection-hint">اختر نوع المنتج لعرض الأصناف</p>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-product-mode="rose-oil" data-min-qty="3">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -190,7 +275,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-product-mode="rose-oil">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -253,7 +338,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-product-mode="rose-oil">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -316,7 +401,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-product-mode="bride-water" data-min-qty="2">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -379,7 +464,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-product-mode="bride-water">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -441,7 +526,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-product-mode="bride-water">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -503,7 +588,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-product-mode="rose-water">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -565,7 +650,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-product-mode="rose-water">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -627,7 +712,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-product-mode="rose-water">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -689,7 +774,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-product-mode="other">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -751,7 +836,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-product-mode="other">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -813,7 +898,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-product-mode="other">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -876,10 +961,14 @@
             </div>
 
             <div class="col-12">
-              <nav class="mt-4" aria-label="Breakfast pagination">
+              <nav
+                class="mt-4"
+                aria-label="Flowers products pagination"
+                id="flowers-pagination-nav"
+              >
                 <ul
                   class="pagination justify-content-center"
-                  id="breakfast-pagination"
+                  id="flowers-pagination"
                 ></ul>
               </nav>
             </div>
@@ -1026,19 +1115,44 @@
         updateQtyControls();
       }
 
-      function addToCart(name, price) {
+      function addToCart(name, price, minQty = 0) {
         let cart = getCart();
         let item = cart.find((p) => p.name === name);
-        let nextQty = item ? (item.quantity || 1) + 1 : 1;
+        let currentQty = item ? item.quantity || 0 : 0;
+        let normalizedMin = Number.isFinite(minQty) ? Math.max(0, minQty) : 0;
+        let nextQty = 1;
+
+        if (currentQty > 0) {
+          nextQty = normalizedMin > 0 && currentQty < normalizedMin ? normalizedMin : currentQty + 1;
+        } else {
+          nextQty = normalizedMin > 0 ? normalizedMin : 1;
+        }
+
         setItemQuantity(name, price, nextQty);
       }
 
-      function decrementFromCart(name) {
+      function decrementFromCart(name, control) {
         let cart = getCart();
         let item = cart.find((p) => p.name === name);
+        if (!item) return;
+
+        let currentQty = item.quantity || 0;
+        let minQty = getControlMinQty(control);
+
+        if (minQty > 0 && currentQty <= minQty) {
+          return;
+        }
+
         let nextQty = item ? (item.quantity || 1) - 1 : 0;
         if (nextQty < 0) nextQty = 0;
         setItemQuantity(name, item ? item.price : 0, nextQty);
+      }
+
+      function getControlMinQty(control) {
+        if (!control) return 0;
+        let raw = parseInt(control.dataset.minQty || "0", 10);
+        if (!Number.isFinite(raw) || raw < 0) return 0;
+        return raw;
       }
 
       function updateCartCount() {
@@ -1062,19 +1176,20 @@
 
       document.addEventListener("DOMContentLoaded", function () {
         syncItemNames();
-        applyBreakfastItemMeta();
+        applyFlowerProductMeta();
         updateCartCount();
         updateQtyControls();
-        setupPagination();
+        setupProductTabsAndPagination();
         document.addEventListener("click", function (e) {
           let addBtn = e.target.closest(".add-btn");
           if (addBtn) {
             let name = addBtn.dataset.name;
             let price = parseFloat(addBtn.dataset.price || "0");
+            let minQty = parseInt(addBtn.dataset.minQty || "0", 10) || 0;
             if (addBtn.dataset.state === "proceed") {
               window.location.href = "cart.html";
             } else {
-              addToCart(name, price);
+              addToCart(name, price, minQty);
             }
             return;
           }
@@ -1088,11 +1203,12 @@
           let name = control.dataset.name;
           let price = parseFloat(control.dataset.price || "0");
           let action = btn.dataset.action;
+          let minQty = getControlMinQty(control);
 
           if (action === "increment") {
-            addToCart(name, price);
+            addToCart(name, price, minQty);
           } else if (action === "decrement") {
-            decrementFromCart(name);
+            decrementFromCart(name, control);
           }
         });
       });
@@ -1112,13 +1228,50 @@
         });
       }
 
-      function applyBreakfastItemMeta() {
+      function applyFlowerProductMeta() {
         let items = Array.from(document.querySelectorAll(".menu-thumb"));
         items.forEach((thumb, index) => {
           let col = thumb.closest(".col-lg-4");
           if (col) {
-            col.classList.add("breakfast-item");
-            col.dataset.productId = `breakfast-${index + 1}`;
+            col.classList.add("flower-product-item");
+            col.dataset.productId = `flower-product-${index + 1}`;
+            if (!col.dataset.productMode) {
+              col.dataset.productMode = "other";
+            }
+
+            let minQty = parseInt(col.dataset.minQty || "0", 10);
+            if (!Number.isFinite(minQty) || minQty < 0) {
+              minQty = 0;
+            }
+
+            let addBtn = thumb.querySelector(".add-btn");
+            let qtyControl = thumb.querySelector(".qty-control");
+            if (addBtn) addBtn.dataset.minQty = String(minQty);
+            if (qtyControl) qtyControl.dataset.minQty = String(minQty);
+
+            let noteTarget = thumb.querySelector(".menu-info");
+            if (
+              minQty > 0 &&
+              noteTarget &&
+              !noteTarget.querySelector(".fixed-min-note")
+            ) {
+              let fixedNote = document.createElement("div");
+              fixedNote.className = "fixed-min-note";
+              fixedNote.textContent =
+                "الكمية اقل كمية داخل الطائف 500 ورده. خارج الطائف اقل كمية 1000";
+
+              let priceTag = noteTarget.querySelector(".price-tag");
+              if (priceTag) {
+                priceTag.insertAdjacentElement("afterend", fixedNote);
+              } else {
+                let title = noteTarget.querySelector("h6, h4");
+                if (title) {
+                  title.insertAdjacentElement("afterend", fixedNote);
+                } else {
+                  noteTarget.prepend(fixedNote);
+                }
+              }
+            }
           }
         });
       }
@@ -1160,26 +1313,32 @@
         });
       }
 
-      function setupPagination() {
-        let items = Array.from(document.querySelectorAll(".breakfast-item"));
-        let pagination = document.getElementById("breakfast-pagination");
-        if (!pagination || items.length === 0) return;
+      function setupProductTabsAndPagination() {
+        let allItems = Array.from(document.querySelectorAll(".flower-product-item"));
+        let pagination = document.getElementById("flowers-pagination");
+        let paginationNav = document.getElementById("flowers-pagination-nav");
+        let tabs = Array.from(document.querySelectorAll(".flowers-mode-tab"));
+        let hint = document.getElementById("flowers-selection-hint");
+        let productsRow = document.getElementById("flowers-products-row");
+
+        if (!pagination || allItems.length === 0 || tabs.length === 0) return;
 
         let perPage = 6;
-        let pageCount = Math.ceil(items.length / perPage);
-        let currentPage = 1;
+        let selectedMode = null;
 
-        function renderPage(page) {
-          currentPage = page;
-          let start = (page - 1) * perPage;
-          let end = start + perPage;
-          items.forEach((item, index) => {
-            item.style.display = index >= start && index < end ? "" : "none";
-          });
-          renderPagination();
+        allItems.forEach((item) => {
+          item.style.display = "none";
+        });
+
+        if (paginationNav) {
+          paginationNav.style.display = "none";
         }
 
-        function createPageItem(label, page, disabled, active) {
+        function getModeItems(mode) {
+          return allItems.filter((item) => item.dataset.productMode === mode);
+        }
+
+        function createPageItem(label, page, disabled, active, onClick) {
           let li = document.createElement("li");
           li.className = "page-item";
           if (disabled) li.classList.add("disabled");
@@ -1188,38 +1347,84 @@
           btn.type = "button";
           btn.className = "page-link";
           btn.textContent = label;
-          if (!disabled) {
-            btn.addEventListener("click", () => {
-              renderPage(page);
-            });
-          }
+          btn.disabled = disabled;
+          if (!disabled) btn.addEventListener("click", onClick);
           li.appendChild(btn);
           return li;
         }
 
-        function renderPagination() {
+        function renderPage(mode, page) {
+          let modeItems = getModeItems(mode);
+          let pageCount = Math.max(1, Math.ceil(modeItems.length / perPage));
+          let safePage = Math.min(Math.max(page, 1), pageCount);
+          let start = (safePage - 1) * perPage;
+          let end = start + perPage;
+
+          allItems.forEach((item) => {
+            item.style.display = "none";
+          });
+
+          modeItems.forEach((item, index) => {
+            item.style.display = index >= start && index < end ? "" : "none";
+          });
+
           pagination.innerHTML = "";
+          if (paginationNav) {
+            paginationNav.style.display = pageCount > 1 ? "" : "none";
+          }
+
           if (pageCount <= 1) return;
+
           pagination.appendChild(
-            createPageItem("السابق", currentPage - 1, currentPage === 1, false),
+            createPageItem(
+              "السابق",
+              safePage - 1,
+              safePage === 1,
+              false,
+              () => renderPage(mode, safePage - 1),
+            ),
           );
           for (let i = 1; i <= pageCount; i += 1) {
             pagination.appendChild(
-              createPageItem(String(i), i, false, currentPage === i),
+              createPageItem(String(i), i, false, safePage === i, () =>
+                renderPage(mode, i),
+              ),
             );
           }
           pagination.appendChild(
             createPageItem(
               "التالي",
-              currentPage + 1,
-              currentPage === pageCount,
+              safePage + 1,
+              safePage === pageCount,
               false,
+              () => renderPage(mode, safePage + 1),
             ),
           );
         }
 
-        renderPage(1);
+        function selectMode(mode) {
+          selectedMode = mode;
+          tabs.forEach((tab) => {
+            let isActive = tab.dataset.mode === mode;
+            tab.classList.toggle("active", isActive);
+            tab.setAttribute("aria-selected", String(isActive));
+          });
+
+          if (hint) hint.style.display = "none";
+          if (productsRow) productsRow.classList.remove("products-locked");
+          renderPage(mode, 1);
+        }
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", function () {
+            let mode = tab.dataset.mode;
+            if (!mode || mode === selectedMode) return;
+            selectMode(mode);
+          });
+        });
       }
     </script>
   </body>
 </html>
+
+

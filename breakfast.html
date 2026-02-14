@@ -32,6 +32,42 @@
     <link href="css/bootstrap-icons.css" rel="stylesheet" />
 
     <link href="css/tooplate-crispy-kitchen.css" rel="stylesheet" />
+    <style>
+      .breakfast-mode-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 18px;
+        flex-wrap: wrap;
+      }
+
+      .breakfast-mode-tab {
+        border: 1px solid rgba(0, 0, 0, 0.18);
+        background: #fff;
+        color: #212529;
+        font-weight: 700;
+        padding: 10px 20px;
+        border-radius: 999px;
+      }
+
+      .breakfast-mode-tab.active {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+        color: #fff;
+      }
+
+      .breakfast-mode-tab:focus-visible {
+        outline: 3px solid rgba(244, 71, 73, 0.3);
+        outline-offset: 2px;
+      }
+
+      #breakfast-selection-hint {
+        text-align: center;
+        margin-bottom: 16px;
+        color: #6c757d;
+        font-weight: 600;
+      }
+    </style>
   </head>
 
   <body class="has-fixed-navbar">
@@ -122,12 +158,161 @@
 
       <section class="menu section-padding">
         <div class="container">
-          <div class="row">
+          <div class="row products-locked" id="breakfast-products-row">
             <div class="col-12">
               <h2 class="text-center mb-lg-5 mb-4">الفطور الصباحى</h2>
+
+              <div
+                class="breakfast-mode-tabs"
+                role="tablist"
+                aria-label="أنواع الطلب"
+              >
+                <button
+                  type="button"
+                  class="breakfast-mode-tab"
+                  data-mode="ondemand"
+                  aria-selected="false"
+                >
+                  حسب الطلب
+                </button>
+                <button
+                  type="button"
+                  class="breakfast-mode-tab"
+                  data-mode="preorder"
+                  aria-selected="false"
+                >
+                  حجز مسبق
+                </button>
+              </div>
+
+              <p id="breakfast-selection-hint">اختر نوع الطلب لعرض المنتجات</p>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-order-mode="ondemand">
+              <div class="menu-thumb">
+                <div class="menu-image-wrap">
+                  <img
+                    src="images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg"
+                    class="img-fluid menu-image"
+                    alt=""
+                  />
+                </div>
+
+                <div class="menu-info d-flex flex-wrap align-items-center">
+                  <h6 class="mb-0">Morning Fresh</h6>
+
+                  <span class="price-tag bg-white shadow-lg"
+                    ><small>$</small>12.50</span
+                  >
+
+                  <div class="d-flex align-items-center gap-2 mt-3 w-100">
+                    <button
+                      class="btn btn-outline-danger btn-sm add-btn add-to-cart-btn"
+                      type="button"
+                      data-name="Morning Fresh"
+                      data-price="12.5"
+                      data-default-text="أضف إلى العربة"
+                      data-proceed-text="متابعة الطلب"
+                    >
+                      <i class="bi-plus-circle"></i> أضف إلى العربة
+                    </button>
+
+                    <div
+                      class="qty-control"
+                      data-name="Morning Fresh"
+                      data-price="12.5"
+                      style="display: none"
+                    >
+                      <button
+                        class="btn btn-outline-danger btn-sm"
+                        type="button"
+                        data-action="decrement"
+                        aria-label="Decrease quantity"
+                      >
+                        <i class="bi-dash-circle"></i>
+                      </button>
+                      <span
+                        class="qty-count text-center fw-semibold"
+                        aria-live="polite"
+                      >
+                        0
+                      </span>
+                      <button
+                        class="btn btn-outline-danger btn-sm"
+                        type="button"
+                        data-action="increment"
+                        aria-label="Increase quantity"
+                      >
+                        <i class="bi-plus-circle"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12" data-order-mode="ondemand">
+              <div class="menu-thumb">
+                <div class="menu-image-wrap">
+                  <img
+                    src="images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg"
+                    class="img-fluid menu-image"
+                    alt=""
+                  />
+                </div>
+
+                <div class="menu-info d-flex flex-wrap align-items-center">
+                  <h6 class="mb-0">Morning Fresh</h6>
+
+                  <span class="price-tag bg-white shadow-lg"
+                    ><small>$</small>12.50</span
+                  >
+
+                  <div class="d-flex align-items-center gap-2 mt-3 w-100">
+                    <button
+                      class="btn btn-outline-danger btn-sm add-btn add-to-cart-btn"
+                      type="button"
+                      data-name="Morning Fresh"
+                      data-price="12.5"
+                      data-default-text="أضف إلى العربة"
+                      data-proceed-text="متابعة الطلب"
+                    >
+                      <i class="bi-plus-circle"></i> أضف إلى العربة
+                    </button>
+
+                    <div
+                      class="qty-control"
+                      data-name="Morning Fresh"
+                      data-price="12.5"
+                      style="display: none"
+                    >
+                      <button
+                        class="btn btn-outline-danger btn-sm"
+                        type="button"
+                        data-action="decrement"
+                        aria-label="Decrease quantity"
+                      >
+                        <i class="bi-dash-circle"></i>
+                      </button>
+                      <span
+                        class="qty-count text-center fw-semibold"
+                        aria-live="polite"
+                      >
+                        0
+                      </span>
+                      <button
+                        class="btn btn-outline-danger btn-sm"
+                        type="button"
+                        data-action="increment"
+                        aria-label="Increase quantity"
+                      >
+                        <i class="bi-plus-circle"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12" data-order-mode="ondemand">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -190,7 +375,70 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-order-mode="ondemand">
+              <div class="menu-thumb">
+                <div class="menu-image-wrap">
+                  <img
+                    src="images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg"
+                    class="img-fluid menu-image"
+                    alt=""
+                  />
+                </div>
+
+                <div class="menu-info d-flex flex-wrap align-items-center">
+                  <h6 class="mb-0">Morning Fresh</h6>
+
+                  <span class="price-tag bg-white shadow-lg"
+                    ><small>$</small>12.50</span
+                  >
+
+                  <div class="d-flex align-items-center gap-2 mt-3 w-100">
+                    <button
+                      class="btn btn-outline-danger btn-sm add-btn add-to-cart-btn"
+                      type="button"
+                      data-name="Morning Fresh"
+                      data-price="12.5"
+                      data-default-text="أضف إلى العربة"
+                      data-proceed-text="متابعة الطلب"
+                    >
+                      <i class="bi-plus-circle"></i> أضف إلى العربة
+                    </button>
+
+                    <div
+                      class="qty-control"
+                      data-name="Morning Fresh"
+                      data-price="12.5"
+                      style="display: none"
+                    >
+                      <button
+                        class="btn btn-outline-danger btn-sm"
+                        type="button"
+                        data-action="decrement"
+                        aria-label="Decrease quantity"
+                      >
+                        <i class="bi-dash-circle"></i>
+                      </button>
+                      <span
+                        class="qty-count text-center fw-semibold"
+                        aria-live="polite"
+                      >
+                        0
+                      </span>
+                      <button
+                        class="btn btn-outline-danger btn-sm"
+                        type="button"
+                        data-action="increment"
+                        aria-label="Increase quantity"
+                      >
+                        <i class="bi-plus-circle"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12" data-order-mode="ondemand">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -253,7 +501,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-order-mode="ondemand">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -316,7 +564,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-order-mode="ondemand">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -379,7 +627,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-order-mode="ondemand">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -441,7 +689,191 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-order-mode="ondemand">
+              <div class="menu-thumb">
+                <div class="menu-image-wrap">
+                  <img
+                    src="images/lunch/farhad-ibrahimzade-D5c9ZciQy_I-unsplash.jpg"
+                    class="img-fluid menu-image"
+                    alt=""
+                  />
+                </div>
+
+                <div class="menu-info d-flex flex-wrap align-items-center">
+                  <h6 class="mb-0">Healthy Soup</h6>
+
+                  <span class="price-tag bg-white shadow-lg"
+                    ><small>$</small>34.20</span
+                  >
+                  <div class="d-flex align-items-center gap-2 mt-3 w-100">
+                    <button
+                      class="btn btn-outline-danger btn-sm add-btn add-to-cart-btn"
+                      type="button"
+                      data-name="Healthy Soup"
+                      data-price="12.5"
+                      data-default-text="أضف إلى العربة"
+                      data-proceed-text="متابعة الطلب"
+                    >
+                      <i class="bi-plus-circle"></i> أضف إلى العربة
+                    </button>
+
+                    <div
+                      class="qty-control"
+                      data-name="Healthy Soup"
+                      data-price="12.5"
+                      style="display: none"
+                    >
+                      <button
+                        class="btn btn-outline-danger btn-sm"
+                        type="button"
+                        data-action="decrement"
+                        aria-label="Decrease quantity"
+                      >
+                        <i class="bi-dash-circle"></i>
+                      </button>
+                      <span
+                        class="qty-count text-center fw-semibold"
+                        aria-live="polite"
+                      >
+                        0
+                      </span>
+                      <button
+                        class="btn btn-outline-danger btn-sm"
+                        type="button"
+                        data-action="increment"
+                        aria-label="Increase quantity"
+                      >
+                        <i class="bi-plus-circle"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12" data-order-mode="ondemand">
+              <div class="menu-thumb">
+                <div class="menu-image-wrap">
+                  <img
+                    src="images/lunch/farhad-ibrahimzade-D5c9ZciQy_I-unsplash.jpg"
+                    class="img-fluid menu-image"
+                    alt=""
+                  />
+                </div>
+
+                <div class="menu-info d-flex flex-wrap align-items-center">
+                  <h6 class="mb-0">Healthy Soup</h6>
+
+                  <span class="price-tag bg-white shadow-lg"
+                    ><small>$</small>34.20</span
+                  >
+                  <div class="d-flex align-items-center gap-2 mt-3 w-100">
+                    <button
+                      class="btn btn-outline-danger btn-sm add-btn add-to-cart-btn"
+                      type="button"
+                      data-name="Healthy Soup"
+                      data-price="12.5"
+                      data-default-text="أضف إلى العربة"
+                      data-proceed-text="متابعة الطلب"
+                    >
+                      <i class="bi-plus-circle"></i> أضف إلى العربة
+                    </button>
+
+                    <div
+                      class="qty-control"
+                      data-name="Healthy Soup"
+                      data-price="12.5"
+                      style="display: none"
+                    >
+                      <button
+                        class="btn btn-outline-danger btn-sm"
+                        type="button"
+                        data-action="decrement"
+                        aria-label="Decrease quantity"
+                      >
+                        <i class="bi-dash-circle"></i>
+                      </button>
+                      <span
+                        class="qty-count text-center fw-semibold"
+                        aria-live="polite"
+                      >
+                        0
+                      </span>
+                      <button
+                        class="btn btn-outline-danger btn-sm"
+                        type="button"
+                        data-action="increment"
+                        aria-label="Increase quantity"
+                      >
+                        <i class="bi-plus-circle"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-lg-4 col-md-6 col-12" data-order-mode="preorder">
+              <div class="menu-thumb">
+                <div class="menu-image-wrap">
+                  <img
+                    src="images/lunch/farhad-ibrahimzade-D5c9ZciQy_I-unsplash.jpg"
+                    class="img-fluid menu-image"
+                    alt=""
+                  />
+                </div>
+
+                <div class="menu-info d-flex flex-wrap align-items-center">
+                  <h6 class="mb-0">Healthy Soup</h6>
+
+                  <span class="price-tag bg-white shadow-lg"
+                    ><small>$</small>34.20</span
+                  >
+                  <div class="d-flex align-items-center gap-2 mt-3 w-100">
+                    <button
+                      class="btn btn-outline-danger btn-sm add-btn add-to-cart-btn"
+                      type="button"
+                      data-name="Healthy Soup"
+                      data-price="12.5"
+                      data-default-text="أضف إلى العربة"
+                      data-proceed-text="متابعة الطلب"
+                    >
+                      <i class="bi-plus-circle"></i> أضف إلى العربة
+                    </button>
+
+                    <div
+                      class="qty-control"
+                      data-name="Healthy Soup"
+                      data-price="12.5"
+                      style="display: none"
+                    >
+                      <button
+                        class="btn btn-outline-danger btn-sm"
+                        type="button"
+                        data-action="decrement"
+                        aria-label="Decrease quantity"
+                      >
+                        <i class="bi-dash-circle"></i>
+                      </button>
+                      <span
+                        class="qty-count text-center fw-semibold"
+                        aria-live="polite"
+                      >
+                        0
+                      </span>
+                      <button
+                        class="btn btn-outline-danger btn-sm"
+                        type="button"
+                        data-action="increment"
+                        aria-label="Increase quantity"
+                      >
+                        <i class="bi-plus-circle"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="col-lg-4 col-md-6 col-12" data-order-mode="preorder">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -503,7 +935,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-order-mode="preorder">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -565,7 +997,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-order-mode="preorder">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -627,7 +1059,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-order-mode="preorder">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -689,7 +1121,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-order-mode="preorder">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -751,69 +1183,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12">
-              <div class="menu-thumb">
-                <div class="menu-image-wrap">
-                  <img
-                    src="images/lunch/farhad-ibrahimzade-D5c9ZciQy_I-unsplash.jpg"
-                    class="img-fluid menu-image"
-                    alt=""
-                  />
-                </div>
-
-                <div class="menu-info d-flex flex-wrap align-items-center">
-                  <h6 class="mb-0">Healthy Soup</h6>
-
-                  <span class="price-tag bg-white shadow-lg"
-                    ><small>$</small>34.20</span
-                  >
-                  <div class="d-flex align-items-center gap-2 mt-3 w-100">
-                    <button
-                      class="btn btn-outline-danger btn-sm add-btn add-to-cart-btn"
-                      type="button"
-                      data-name="Healthy Soup"
-                      data-price="12.5"
-                      data-default-text="أضف إلى العربة"
-                      data-proceed-text="متابعة الطلب"
-                    >
-                      <i class="bi-plus-circle"></i> أضف إلى العربة
-                    </button>
-
-                    <div
-                      class="qty-control"
-                      data-name="Healthy Soup"
-                      data-price="12.5"
-                      style="display: none"
-                    >
-                      <button
-                        class="btn btn-outline-danger btn-sm"
-                        type="button"
-                        data-action="decrement"
-                        aria-label="Decrease quantity"
-                      >
-                        <i class="bi-dash-circle"></i>
-                      </button>
-                      <span
-                        class="qty-count text-center fw-semibold"
-                        aria-live="polite"
-                      >
-                        0
-                      </span>
-                      <button
-                        class="btn btn-outline-danger btn-sm"
-                        type="button"
-                        data-action="increment"
-                        aria-label="Increase quantity"
-                      >
-                        <i class="bi-plus-circle"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" data-order-mode="preorder">
               <div class="menu-thumb">
                 <div class="menu-image-wrap">
                   <img
@@ -876,7 +1246,11 @@
             </div>
 
             <div class="col-12">
-              <nav class="mt-4" aria-label="Breakfast pagination">
+              <nav
+                class="mt-4"
+                aria-label="Breakfast pagination"
+                id="breakfast-pagination-nav"
+              >
                 <ul
                   class="pagination justify-content-center"
                   id="breakfast-pagination"
@@ -1065,7 +1439,7 @@
         applyBreakfastItemMeta();
         updateCartCount();
         updateQtyControls();
-        setupPagination();
+        setupBreakfastTabsAndPagination();
         document.addEventListener("click", function (e) {
           let addBtn = e.target.closest(".add-btn");
           if (addBtn) {
@@ -1114,11 +1488,15 @@
 
       function applyBreakfastItemMeta() {
         let items = Array.from(document.querySelectorAll(".menu-thumb"));
+
         items.forEach((thumb, index) => {
           let col = thumb.closest(".col-lg-4");
           if (col) {
             col.classList.add("breakfast-item");
             col.dataset.productId = `breakfast-${index + 1}`;
+            if (!col.dataset.orderMode) {
+              col.dataset.orderMode = "ondemand";
+            }
           }
         });
       }
@@ -1160,65 +1538,116 @@
         });
       }
 
-      function setupPagination() {
-        let items = Array.from(document.querySelectorAll(".breakfast-item"));
+      function setupBreakfastTabsAndPagination() {
+        let allItems = Array.from(document.querySelectorAll(".breakfast-item"));
         let pagination = document.getElementById("breakfast-pagination");
-        if (!pagination || items.length === 0) return;
+        let paginationNav = document.getElementById("breakfast-pagination-nav");
+        let tabs = Array.from(document.querySelectorAll(".breakfast-mode-tab"));
+        let hint = document.getElementById("breakfast-selection-hint");
+        let productsRow = document.getElementById("breakfast-products-row");
+
+        if (!pagination || allItems.length === 0 || tabs.length === 0) return;
 
         let perPage = 6;
-        let pageCount = Math.ceil(items.length / perPage);
-        let currentPage = 1;
+        let selectedMode = null;
 
-        function renderPage(page) {
-          currentPage = page;
-          let start = (page - 1) * perPage;
-          let end = start + perPage;
-          items.forEach((item, index) => {
-            item.style.display = index >= start && index < end ? "" : "none";
-          });
-          renderPagination();
+        allItems.forEach((item) => {
+          item.style.display = "none";
+        });
+
+        if (paginationNav) {
+          paginationNav.style.display = "none";
         }
 
-        function createPageItem(label, page, disabled, active) {
+        function getModeItems(mode) {
+          return allItems.filter((item) => item.dataset.orderMode === mode);
+        }
+
+        function createPageItem(label, page, disabled, active, onClick) {
           let li = document.createElement("li");
           li.className = "page-item";
           if (disabled) li.classList.add("disabled");
           if (active) li.classList.add("active");
+
           let btn = document.createElement("button");
           btn.type = "button";
           btn.className = "page-link";
           btn.textContent = label;
-          if (!disabled) {
-            btn.addEventListener("click", () => {
-              renderPage(page);
-            });
-          }
+          btn.disabled = disabled;
+          if (!disabled) btn.addEventListener("click", onClick);
+
           li.appendChild(btn);
           return li;
         }
 
-        function renderPagination() {
+        function renderPage(mode, page) {
+          let modeItems = getModeItems(mode);
+          let pageCount = Math.max(1, Math.ceil(modeItems.length / perPage));
+          let safePage = Math.min(Math.max(page, 1), pageCount);
+          let start = (safePage - 1) * perPage;
+          let end = start + perPage;
+
+          allItems.forEach((item) => {
+            item.style.display = "none";
+          });
+
+          modeItems.forEach((item, index) => {
+            item.style.display = index >= start && index < end ? "" : "none";
+          });
+
           pagination.innerHTML = "";
+          if (paginationNav) {
+            paginationNav.style.display = pageCount > 1 ? "" : "none";
+          }
+
           if (pageCount <= 1) return;
+
           pagination.appendChild(
-            createPageItem("السابق", currentPage - 1, currentPage === 1, false),
+            createPageItem("السابق", safePage - 1, safePage === 1, false, () =>
+              renderPage(mode, safePage - 1),
+            ),
           );
+
           for (let i = 1; i <= pageCount; i += 1) {
             pagination.appendChild(
-              createPageItem(String(i), i, false, currentPage === i),
+              createPageItem(String(i), i, false, i === safePage, () =>
+                renderPage(mode, i),
+              ),
             );
           }
+
           pagination.appendChild(
             createPageItem(
               "التالي",
-              currentPage + 1,
-              currentPage === pageCount,
+              safePage + 1,
+              safePage === pageCount,
               false,
+              () => renderPage(mode, safePage + 1),
             ),
           );
         }
 
-        renderPage(1);
+        function selectMode(mode) {
+          selectedMode = mode;
+
+          tabs.forEach((tab) => {
+            let isActive = tab.dataset.mode === mode;
+            tab.classList.toggle("active", isActive);
+            tab.setAttribute("aria-selected", String(isActive));
+          });
+
+          if (hint) hint.style.display = "none";
+          if (productsRow) productsRow.classList.remove("products-locked");
+          renderPage(mode, 1);
+        }
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", function () {
+            let mode = tab.dataset.mode;
+            if (!mode || mode === selectedMode) return;
+            selectMode(mode);
+          });
+        });
       }
     </script>
   </body>
